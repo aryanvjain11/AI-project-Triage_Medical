@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TriageAI — Clinical Emergency Intelligence Platform</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --bg: #04080f;
+    --surface: #0a1628;
+    --surface2: #0d1f38;
+    --border: rgba(0, 180, 255, 0.12);
+    --red: #ff2d55;
+    --cyan: #00b4ff;
+    --green: #00e676;
+    --amber: #ffab00;
+    --white: #f0f6ff;
+    --muted: rgba(160, 200, 255, 0.5);
+    --glow-red: 0 0 30px rgba(255, 45, 85, 0.3);
+    --glow-cyan: 0 0 30px rgba(0, 180, 255, 0.25);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ── GRID CANVAS ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,180,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,180,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 16px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(4, 8, 15, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cyan);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--red); }
+
+  .nav-pill {
+    background: rgba(255, 45, 85, 0.1);
+    border: 1px solid rgba(255, 45, 85, 0.3);
+    color: var(--red);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    animation: blink 2s infinite;
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  .nav-cta {
+    background: var(--cyan);
+    color: var(--bg);
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: #33c5ff; box-shadow: var(--glow-cyan); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    z-index: 1;
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+  }
+
+  .orb-1 { width: 600px; height: 600px; background: rgba(255,45,85,0.07); top: -100px; left: -200px; }
+  .orb-2 { width: 500px; height: 500px; background: rgba(0,180,255,0.08); top: 50px; right: -150px; }
+  .orb-3 { width: 400px; height: 400px; background: rgba(0,230,118,0.04); bottom: 0; left: 50%; transform: translateX(-50%); }
+
+  .esi-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 45, 85, 0.1);
+    border: 1px solid rgba(255,45,85,0.3);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 32px;
+  }
+
+  .esi-dot {
+    width: 6px; height: 6px;
+    background: var(--red);
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+  }
+
+  h1 {
+    font-size: clamp(44px, 7vw, 88px);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+  }
+
+  h1 .line1 { display: block; color: var(--white); }
+  h1 .line2 { display: block; color: var(--cyan); }
+  h1 .line3 { display: block; color: var(--red); }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 620px;
+    margin-bottom: 48px;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 72px;
+  }
+
+  .btn-launch {
+    background: var(--red);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 0 40px rgba(255,45,85,0.25);
+  }
+
+  .btn-launch:hover {
+    background: #ff4d6a;
+    box-shadow: 0 0 60px rgba(255,45,85,0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--white);
+    padding: 16px 36px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.25s;
+  }
+
+  .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
+
+  /* ── VITALS TICKER ── */
+  .vitals-ticker {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+
+  .vital-chip {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 24px;
+    text-align: center;
+    min-width: 110px;
+  }
+
+  .vital-chip .val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--cyan);
+    display: block;
+  }
+
+  .vital-chip .val.danger { color: var(--red); }
+  .vital-chip .val.warn { color: var(--amber); }
+  .vital-chip .val.ok { color: var(--green); }
+
+  .vital-chip .lbl {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* ── SECTION SHARED ── */
+  section {
+    position: relative;
+    z-index: 1;
+    padding: 100px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(30px, 4vw, 50px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 56px;
+  }
+
+  /* ── ESI LEVEL VISUAL ── */
+  .esi-levels {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 64px;
+  }
+
+  .esi-card {
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    border: 1px solid;
+    transition: transform 0.2s;
+    cursor: default;
+  }
+
+  .esi-card:hover { transform: translateY(-4px); }
+
+  .esi-card .num {
+    font-size: 36px;
+    font-weight: 900;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .esi-card .tag {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .esi-card .desc { font-size: 12px; opacity: 0.7; line-height: 1.4; }
+
+  .esi-1 { background: rgba(255,45,85,0.1); border-color: rgba(255,45,85,0.35); }
+  .esi-1 .num, .esi-1 .tag { color: var(--red); }
+
+  .esi-2 { background: rgba(255,100,0,0.1); border-color: rgba(255,100,0,0.35); }
+  .esi-2 .num, .esi-2 .tag { color: #ff6400; }
+
+  .esi-3 { background: rgba(255,171,0,0.1); border-color: rgba(255,171,0,0.35); }
+  .esi-3 .num, .esi-3 .tag { color: var(--amber); }
+
+  .esi-4 { background: rgba(0,180,255,0.08); border-color: rgba(0,180,255,0.25); }
+  .esi-4 .num, .esi-4 .tag { color: var(--cyan); }
+
+  .esi-5 { background: rgba(0,230,118,0.08); border-color: rgba(0,230,118,0.25); }
+  .esi-5 .num, .esi-5 .tag { color: var(--green); }
+
+  /* ── FEATURES GRID ── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .feat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent, var(--cyan)), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .feat-card:hover { border-color: rgba(0,180,255,0.3); transform: translateY(-3px); }
+  .feat-card:hover::before { opacity: 1; }
+
+  .feat-icon {
+    font-size: 32px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .feat-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--white);
+  }
+
+  .feat-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* ── MODELS SECTION ── */
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .model-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: all 0.2s;
+  }
+
+  .model-row:hover { border-color: rgba(0,180,255,0.3); }
+
+  .model-badge {
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .badge-groq { background: rgba(0,230,118,0.15); color: var(--green); }
+  .badge-openai { background: rgba(0,180,255,0.15); color: var(--cyan); }
+  .badge-openrouter { background: rgba(255,171,0,0.15); color: var(--amber); }
+
+  .model-name { font-size: 14px; font-weight: 600; flex: 1; }
+  .model-note { font-size: 12px; color: var(--muted); }
+
+  /* ── FLOW DIAGRAM ── */
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .flow-step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    min-width: 150px;
+    flex-shrink: 0;
+  }
+
+  .flow-icon { font-size: 28px; display: block; margin-bottom: 8px; }
+  .flow-label { font-size: 12px; font-weight: 600; color: var(--white); }
+  .flow-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+  .flow-arrow {
+    flex-shrink: 0;
+    width: 40px;
+    text-align: center;
+    color: var(--cyan);
+    font-size: 20px;
+    opacity: 0.5;
+  }
+
+  /* ── STATS ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 64px;
+  }
+
+  .stat-block {
+    text-align: center;
+    padding: 32px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+  }
+
+  .stat-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--cyan);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-lbl { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+  /* ── LANG PILLS ── */
+  .lang-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .lang-pill {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    text-align: center;
+    padding: 100px 24px;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-section h2 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 40px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ── TERMINAL DEMO BLOCK ── */
+  .terminal {
+    background: #010d1a;
+    border: 1px solid rgba(0,180,255,0.2);
+    border-radius: 14px;
+    overflow: hidden;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .terminal-bar {
+    background: #030f1f;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(0,180,255,0.15);
+  }
+
+  .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .td-red { background: #ff5f56; }
+  .td-yellow { background: #ffbd2e; }
+  .td-green { background: #27c93f; }
+  .terminal-title { font-size: 12px; color: var(--muted); margin-left: 8px; font-family: 'JetBrains Mono', monospace; }
+
+  .terminal-body {
+    padding: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .t-comment { color: #3d5e7a; }
+  .t-key { color: var(--cyan); }
+  .t-val { color: var(--green); }
+  .t-warn { color: var(--red); font-weight: 600; }
+  .t-str { color: var(--amber); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+
+  /* ── SCROLLREVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── PULSE RING ── */
+  .pulse-ring {
+    display: inline-block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+  }
+
+  .pulse-ring::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--red);
+    border-radius: 50%;
+    animation: pulse-scale 2s infinite;
+  }
+
+  @keyframes pulse-scale {
+    0% { transform: scale(1); opacity: 1; }
+    70% { transform: scale(2.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 0; }
+  }
+
+  /* ── DIVIDER LINE ── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .esi-levels { grid-template-columns: repeat(3, 1fr); }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .models-grid { grid-template-columns: 1fr; }
+    .flow { gap: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Triage<span>AI</span></div>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div class="nav-pill"><span class="pulse-ring"></span>System Active</div>
+    <a href="Index2.html" class="nav-cta">Launch App →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-orb orb-1"></div>
+  <div class="hero-orb orb-2"></div>
+  <div class="hero-orb orb-3"></div>
+
+  <div class="esi-badge animate delay-1">
+    <span class="esi-dot"></span>
+    AI-Powered Emergency Triage · ESI Level 1–5 Classification
+  </div>
+
+  <h1 class="animate delay-2">
+    <span class="line1">Clinical Intelligence</span>
+    <span class="line2">Triage at the</span>
+    <span class="line3">Speed of Emergency</span>
+  </h1>
+
+  <p class="hero-sub animate delay-3">
+    The first multilingual AI triage engine that reads vitals, translates symptoms, calculates ESI classifications, and routes patients to the right care — in seconds.
+  </p>
+
+  <div class="hero-actions animate delay-4">
+    <a href="Index2.html" class="btn-launch">🏥 Open Triage Dashboard</a>
+    <a href="#features" class="btn-ghost">Explore Features ↓</a>
+  </div>
+
+  <!-- Live Vitals Ticker -->
+  <div class="vitals-ticker">
+    <div class="vital-chip">
+      <span class="val danger" id="t-hr">142</span>
+      <span class="lbl">Heart Rate</span>
+    </div>
+    <div class="vital-chip">
+      <span class="val warn">88/54</span>
+      <span class="lbl">Blood Pressure</span>
+    </div>
+    <div class="vital-chip">
+      <span class="val danger">91%</span>
+      <span class="lbl">SpO2</span>
+    </div>
+    <div class="vital-chip">
+      <span class="val warn">103.2°F</span>
+      <span class="lbl">Temperature</span>
+    </div>
+    <div class="vital-chip">
+      <span class="val ok">ESI-1</span>
+      <span class="lbl">Triage Level</span>
+    </div>
+    <div class="vital-chip">
+      <span class="val" style="color:var(--amber)">1.62</span>
+      <span class="lbl">Shock Index</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ESI CLASSIFICATION -->
+<section id="esi">
+  <div class="section-eyebrow reveal">ESI Score Engine</div>
+  <div class="section-title reveal">Five Levels. Zero Guesswork.</div>
+  <p class="section-sub reveal">The AI cross-references live vital telemetry with symptom analysis to assign the correct Emergency Severity Index classification instantly.</p>
+
+  <div class="esi-levels reveal">
+    <div class="esi-card esi-1">
+      <span class="num">1</span>
+      <span class="tag">Critical</span>
+      <p class="desc">SpO₂ &lt; 90%, Systolic &lt; 85 mmHg, HR &gt; 130 bpm, or cardiac/respiratory arrest</p>
+    </div>
+    <div class="esi-card esi-2">
+      <span class="num">2</span>
+      <span class="tag">High Risk</span>
+      <p class="desc">Acute severe pain, stroke signs, hemodynamic instability, SpO₂ 90–94%</p>
+    </div>
+    <div class="esi-card esi-3">
+      <span class="num">3</span>
+      <span class="tag">Urgent</span>
+      <p class="desc">Stable vitals with complex symptoms requiring multi-resource intervention</p>
+    </div>
+    <div class="esi-card esi-4">
+      <span class="num">4</span>
+      <span class="tag">Less Urgent</span>
+      <p class="desc">Single-resource management needed, not at risk of immediate deterioration</p>
+    </div>
+    <div class="esi-card esi-5">
+      <span class="num">5</span>
+      <span class="tag">Non-Urgent</span>
+      <p class="desc">Chronic conditions or minor complaints suitable for outpatient routing</p>
+    </div>
+  </div>
+
+  <!-- Terminal Output Demo -->
+  <div class="terminal reveal">
+    <div class="terminal-bar">
+      <div class="terminal-dot td-red"></div>
+      <div class="terminal-dot td-yellow"></div>
+      <div class="terminal-dot td-green"></div>
+      <span class="terminal-title">triage_output.json — AI Analysis Result</span>
+    </div>
+    <div class="terminal-body">
+      <span class="t-comment">// Patient: Dolor de pecho severo, dificultad para respirar</span><br>
+      <span class="t-key">"translation"</span>: <span class="t-str">"Severe ischemic chest pressure with acute dyspnea onset"</span>,<br>
+      <span class="t-key">"symptoms"</span>: [<span class="t-str">"Ischemic Chest Pressure"</span>, <span class="t-str">"Acute Dyspnea"</span>, <span class="t-str">"Diaphoresis"</span>],<br>
+      <span class="t-key">"body_part"</span>: <span class="t-str">"Anterior Thoracic / Myocardial Region"</span>,<br>
+      <span class="t-key">"severity"</span>: <span class="t-warn">"CRITICAL"</span>,<br>
+      <span class="t-key">"urgency_score"</span>: <span class="t-warn">1</span>,<br>
+      <span class="t-key">"category"</span>: <span class="t-str">"Emergency Resuscitation Unit"</span>,<br>
+      <span class="t-key">"red_flags"</span>: [<span class="t-warn">"Severe Hypoxemia"</span>, <span class="t-warn">"Hemodynamic Instability"</span>],<br>
+      <span class="t-key">"confidence"</span>: <span class="t-val">0.97</span><br>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-eyebrow reveal">Platform Capabilities</div>
+  <div class="section-title reveal">Built for the<br>Emergency Department</div>
+  <p class="section-sub reveal">Every feature engineered for speed, accuracy, and the chaos of real emergency medicine.</p>
+
+  <div class="features-grid">
+    <div class="feat-card reveal" style="--accent: var(--red);">
+      <span class="feat-icon">🌐</span>
+      <div class="feat-title">Multilingual Symptom Translation</div>
+      <p class="feat-desc">Accepts patient input in English, Spanish, Hindi, French, and Mandarin. Automatically translates to clinical English for medical record accuracy — no interpreter needed.</p>
+    </div>
+
+    <div class="feat-card reveal" style="--accent: var(--cyan);">
+      <span class="feat-icon">🫀</span>
+      <div class="feat-title">Real-Time Vital Telemetry Analysis</div>
+      <p class="feat-desc">Inputs HR, BP, SpO₂, and Temperature. Auto-calculates Mean Arterial Pressure (MAP) and Shock Index to flag hemodynamic instability before symptoms escalate.</p>
+    </div>
+
+    <div class="feat-card reveal" style="--accent: var(--green);">
+      <span class="feat-icon">🤖</span>
+      <div class="feat-title">Multi-Model AI Router</div>
+      <p class="feat-desc">Smart hub routes to Groq (Llama 3.3 70B), OpenAI (GPT-4o), or OpenRouter (Claude, Qwen) based on configuration — with automatic fallback if a provider is unavailable.</p>
+    </div>
+
+    <div class="feat-card reveal" style="--accent: var(--amber);">
+      <span class="feat-icon">📋</span>
+      <div class="feat-title">Live Priority Queue Management</div>
+      <p class="feat-desc">Dynamically sorted triage queue sorted by ESI level. Physicians can override AI classifications, reassign urgency, and release patients to assigned beds in real time.</p>
+    </div>
+
+    <div class="feat-card reveal" style="--accent: var(--red);">
+      <span class="feat-icon">🎙️</span>
+      <div class="feat-title">Voice Input & Audio Output</div>
+      <p class="feat-desc">Patients speak symptoms directly — voice recognition captures in the selected language. AI generates a native-language reassurance script read aloud via browser speech synthesis.</p>
+    </div>
+
+    <div class="feat-card reveal" style="--accent: var(--cyan);">
+      <span class="feat-icon">💬</span>
+      <div class="feat-title">Multilingual Waiting Room Assistant</div>
+      <p class="feat-desc">An empathetic AI chatbot answers patient questions in their native language — wait times, amenities, procedures — escalating to clinical staff when dangerous symptoms are mentioned.</p>
+    </div>
+
+    <div class="feat-card reveal" style="--accent: var(--green);">
+      <span class="feat-icon">🚨</span>
+      <div class="feat-title">Emergency Pulse Alerts</div>
+      <p class="feat-desc">Critical ESI Level 1 patients trigger animated pulse alerts on the dashboard. Visual hierarchy immediately communicates risk to nursing and physician staff at a glance.</p>
+    </div>
+
+    <div class="feat-card reveal" style="--accent: var(--amber);">
+      <span class="feat-icon">💊</span>
+      <div class="feat-title">Allergy & Medication Context</div>
+      <p class="feat-desc">Allergy and active medication data are embedded into every AI prompt — giving the model full pharmacological context to flag interactions and contraindication risk vectors.</p>
+    </div>
+
+    <div class="feat-card reveal" style="--accent: var(--red);">
+      <span class="feat-icon">🛡️</span>
+      <div class="feat-title">Offline Fallback Rules Engine</div>
+      <p class="feat-desc">A local clinical decision engine activates when AI providers are unreachable. Pure algorithmic ESI scoring ensures zero downtime — even without an internet connection.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section id="flow">
+  <div class="section-eyebrow reveal">Clinical Workflow</div>
+  <div class="section-title reveal">Intake to Assignment<br>in Under 5 Seconds</div>
+  <p class="section-sub reveal">Each patient encounter follows a structured pipeline from raw input to bed assignment.</p>
+
+  <div class="flow reveal">
+    <div class="flow-step">
+      <span class="flow-icon">🗣️</span>
+      <div class="flow-label">Patient Input</div>
+      <div class="flow-sub">Voice or text in any supported language</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <span class="flow-icon">🌐</span>
+      <div class="flow-label">Auto-Translate</div>
+      <div class="flow-sub">Symptoms converted to clinical English</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <span class="flow-icon">🤖</span>
+      <div class="flow-label">AI Analysis</div>
+      <div class="flow-sub">Routed to optimal model pipeline</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <span class="flow-icon">🫀</span>
+      <div class="flow-label">Vital Scoring</div>
+      <div class="flow-sub">MAP, Shock Index, ESI level assigned</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <span class="flow-icon">📋</span>
+      <div class="flow-label">Queue + Route</div>
+      <div class="flow-sub">Priority sorted, destination assigned</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <span class="flow-icon">🛏️</span>
+      <div class="flow-label">Bed Release</div>
+      <div class="flow-sub">Physician confirms, patient is admitted</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AI MODELS -->
+<section id="models">
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+    <div>
+      <div class="section-eyebrow reveal">AI Engine Options</div>
+      <div class="section-title reveal">5 Models.<br>One Smart Router.</div>
+      <p class="section-sub reveal" style="margin-bottom:0;">The unified routing hub selects and dispatches to whichever provider is configured — with graceful degradation down the chain.</p>
+
+      <div class="lang-row reveal" style="margin-top:32px;">
+        <div class="lang-pill">🇺🇸 English</div>
+        <div class="lang-pill">🇪🇸 Español</div>
+        <div class="lang-pill">🇮🇳 हिंदी</div>
+        <div class="lang-pill">🇫🇷 Français</div>
+        <div class="lang-pill">🇨🇳 普通话</div>
+      </div>
+    </div>
+
+    <div class="models-grid reveal">
+      <div class="model-row">
+        <span class="model-badge badge-groq">Groq</span>
+        <div>
+          <div class="model-name">Llama 3.3 70B</div>
+          <div class="model-note">Ultra-fast inference · Default</div>
+        </div>
+      </div>
+      <div class="model-row">
+        <span class="model-badge badge-openai">OpenAI</span>
+        <div>
+          <div class="model-name">GPT-4o Mini</div>
+          <div class="model-note">Cost-effective · High accuracy</div>
+        </div>
+      </div>
+      <div class="model-row">
+        <span class="model-badge badge-openai">OpenAI</span>
+        <div>
+          <div class="model-name">GPT-4o</div>
+          <div class="model-note">Multimodal · Standard tier</div>
+        </div>
+      </div>
+      <div class="model-row">
+        <span class="model-badge badge-openrouter">OpenRouter</span>
+        <div>
+          <div class="model-name">Qwen 2.5 72B</div>
+          <div class="model-note">Clinical structuring specialist</div>
+        </div>
+      </div>
+      <div class="model-row" style="grid-column: 1 / -1;">
+        <span class="model-badge badge-openrouter">OpenRouter</span>
+        <div>
+          <div class="model-name">Claude 3.5 Sonnet</div>
+          <div class="model-note">Advanced reasoning · Complex cases</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STATS -->
+<section>
+  <div class="stats-row reveal">
+    <div class="stat-block">
+      <div class="stat-val">5</div>
+      <div class="stat-lbl">Supported Languages</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-val">5</div>
+      <div class="stat-lbl">ESI Classification Levels</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-val">5</div>
+      <div class="stat-lbl">AI Model Pipelines</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-val">0s</div>
+      <div class="stat-lbl">Offline Fallback Delay</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="esi-badge" style="margin-bottom:24px;">
+    <span class="esi-dot"></span>
+    Running on localhost:5000
+  </div>
+  <h2>Ready to See It Live?</h2>
+  <p>Launch the dashboard, input vitals and symptoms, and watch the AI triage engine classify your first patient in real time.</p>
+  <a href="Index2.html" class="btn-launch" style="font-size:17px; padding:18px 48px;">
+    🏥 Open Triage Dashboard
+  </a>
+  <div style="margin-top:24px; font-size:12px; color:var(--muted); font-family:'JetBrains Mono',monospace;">
+    Make sure app.py is running · python app.py
+  </div>
+</div>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Animated vital HR counter
+  let hrVal = 142;
+  setInterval(() => {
+    hrVal = 130 + Math.floor(Math.random() * 20);
+    document.getElementById('t-hr').textContent = hrVal;
+  }, 2000);
+</script>
+</body>
+</html>

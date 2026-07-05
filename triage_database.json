@@ -1,0 +1,2845 @@
+[
+  {
+    "timestamp": "2026-06-28T10:19:34.089095",
+    "input_language": "Spanish",
+    "original_text": "Yo tengo mucho dolor en mis piernas.",
+    "vitals_provided": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "processed_output": {
+      "translation": "Yo tengo mucho dolor en mis piernas.",
+      "native_audio_script": "आपकी जानकारी सुरक्षित रूप से दर्ज कर ली गई है। कृपया प्रतीक्षा करें।",
+      "symptoms": [
+        "General symptoms documented"
+      ],
+      "body_part": "Unspecified",
+      "pain_level": "Mild/Moderate",
+      "duration": "Varies",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.4,
+      "explanation": "Local backup classification matrix engaged. Baseline parameters within non-critical operational corridors."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T10:20:16.198001",
+    "input_language": "English",
+    "original_text": "I have a pain in my feet.",
+    "vitals_provided": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "processed_output": {
+      "translation": "[Local Backup Parse] I have a pain in my feet.",
+      "native_audio_script": "आपातकालीन स्थिति खोजी गई है। मदद आ रही है।",
+      "symptoms": [
+        "Critical physiological indicator flagged"
+      ],
+      "body_part": "Cardiopulmonary/Vascular",
+      "pain_level": "High Risk Indicators",
+      "duration": "Immediate Action required",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Local ML Rules Vector Threshold Breached"
+      ],
+      "confidence": 0.5,
+      "explanation": "Local deterministic backup system engaged. Critical cardiopulmonary parameters or severe key-phrases detected."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T10:39:15.813179",
+    "input_language": "English",
+    "original_text": "I have a pain in my feet.",
+    "vitals_provided": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "109"
+    },
+    "processed_output": {
+      "translation": "[Local Backup Parse] I have a pain in my feet.",
+      "native_audio_script": "आपातकालीन स्थिति खोजी गई है। मदद आ रही है।",
+      "symptoms": [
+        "Critical physiological indicator flagged"
+      ],
+      "body_part": "Cardiopulmonary/Vascular",
+      "pain_level": "High Risk Indicators",
+      "duration": "Immediate Action required",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Local ML Rules Vector Threshold Breached"
+      ],
+      "confidence": 0.5,
+      "explanation": "Local deterministic backup system engaged. Critical cardiopulmonary parameters or severe key-phrases detected."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T10:39:24.077610",
+    "input_language": "English",
+    "original_text": "I have a pain in my feet.",
+    "vitals_provided": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "0"
+    },
+    "processed_output": {
+      "translation": "[Local Backup Parse] I have a pain in my feet.",
+      "native_audio_script": "आपातकालीन स्थिति खोजी गई है। मदद आ रही है।",
+      "symptoms": [
+        "Critical physiological indicator flagged"
+      ],
+      "body_part": "Cardiopulmonary/Vascular",
+      "pain_level": "High Risk Indicators",
+      "duration": "Immediate Action required",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Local ML Rules Vector Threshold Breached"
+      ],
+      "confidence": 0.5,
+      "explanation": "Local deterministic backup system engaged. Critical cardiopulmonary parameters or severe key-phrases detected."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T10:39:29.247055",
+    "input_language": "English",
+    "original_text": "I have a pain in my feet.",
+    "vitals_provided": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "100"
+    },
+    "processed_output": {
+      "translation": "[Local Backup Parse] I have a pain in my feet.",
+      "native_audio_script": "आपातकालीन स्थिति खोजी गई है। मदद आ रही है।",
+      "symptoms": [
+        "Critical physiological indicator flagged"
+      ],
+      "body_part": "Cardiopulmonary/Vascular",
+      "pain_level": "High Risk Indicators",
+      "duration": "Immediate Action required",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Local ML Rules Vector Threshold Breached"
+      ],
+      "confidence": 0.5,
+      "explanation": "Local deterministic backup system engaged. Critical cardiopulmonary parameters or severe key-phrases detected."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T10:39:45.658294",
+    "input_language": "English",
+    "original_text": "Slight concussion.",
+    "vitals_provided": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "100"
+    },
+    "processed_output": {
+      "translation": "Slight concussion.",
+      "native_audio_script": "आपकी जानकारी सुरक्षित रूप से दर्ज कर ली गई है। कृपया प्रतीक्षा करें।",
+      "symptoms": [
+        "General symptoms documented"
+      ],
+      "body_part": "Unspecified",
+      "pain_level": "Mild/Moderate",
+      "duration": "Varies",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.4,
+      "explanation": "Local backup classification matrix engaged. Baseline parameters within non-critical operational corridors."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T10:45:20.102993",
+    "input_language": "Spanish",
+    "original_text": "Yo tengo mucho dolor en mis piernas y en mi cabeza.",
+    "vitals_provided": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "processed_output": {
+      "translation": "Yo tengo mucho dolor en mis piernas y en mi cabeza.",
+      "native_audio_script": "आपकी जानकारी सुरक्षित रूप से दर्ज कर ली गई है। कृपया प्रतीक्षा करें।",
+      "symptoms": [
+        "General symptoms documented"
+      ],
+      "body_part": "Unspecified",
+      "pain_level": "Mild/Moderate",
+      "duration": "Varies",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.4,
+      "explanation": "Local backup classification matrix engaged. Baseline parameters within non-critical operational corridors."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T10:46:05.602419",
+    "input_language": "Spanish",
+    "original_text": "Mi cabeza es azul.",
+    "vitals_provided": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "processed_output": {
+      "translation": "Mi cabeza es azul.",
+      "native_audio_script": "आपकी जानकारी सुरक्षित रूप से दर्ज कर ली गई है। कृपया प्रतीक्षा करें।",
+      "symptoms": [
+        "General symptoms documented"
+      ],
+      "body_part": "Unspecified",
+      "pain_level": "Mild/Moderate",
+      "duration": "Varies",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.4,
+      "explanation": "Local backup classification matrix engaged. Baseline parameters within non-critical operational corridors."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T10:51:42.788688",
+    "input_language": "Spanish",
+    "original_text": "Yo tengo mucho dolor en mi piernas.",
+    "vitals_provided": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "processed_output": {
+      "translation": "[Backup Parse] Critical cardiopulmonary symptoms noted: Yo tengo mucho dolor en mi piernas.",
+      "native_audio_script": "Alerta crítica detectada. La ayuda está en camino.",
+      "symptoms": [
+        "Critical physiological indicator flagged"
+      ],
+      "body_part": "Cardiopulmonary",
+      "pain_level": "High Risk",
+      "duration": "Immediate",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Threshold Breached"
+      ],
+      "confidence": 0.5,
+      "explanation": "Local backup engaged. Critical parameters or high-risk key phrases detected."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T12:06:57.323462",
+    "input_language": "English",
+    "original_text": "I have a lot of pain in my hand. It is bleeding and turning blue-ish purple.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: I have a lot of pain in my hand. It is bleeding and turning blue-ish purple.",
+      "native_audio_script": "Intake information successfully integrated into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T12:10:25.797011",
+    "input_language": "Spanish",
+    "original_text": "Yo tengo mucho dolor en mi cabeza.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T12:10:28.017946",
+    "input_language": "Spanish",
+    "original_text": "Yo tengo mucho dolor en mi cabeza.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T12:10:29.382639",
+    "input_language": "Spanish",
+    "original_text": "Yo tengo mucho dolor en mi cabeza.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T12:23:28.114285",
+    "input_language": "English",
+    "original_text": "Hello, I have slight pain in my chest.",
+    "vitals": {
+      "hr": "3000",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: Hello, I have slight pain in my chest.",
+      "native_audio_script": "Intake information successfully integrated into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T12:24:55.562026",
+    "input_language": "English",
+    "original_text": "Hello, I have slight pain in my chest.",
+    "vitals": {
+      "hr": "30",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: Hello, I have slight pain in my chest.",
+      "native_audio_script": "Intake information successfully integrated into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T12:31:07.585434",
+    "input_language": "English",
+    "original_text": "Hello, I have slight pain in my chest.",
+    "vitals": {
+      "hr": "300",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: Hello, I have slight pain in my chest.",
+      "native_audio_script": "Intake information successfully integrated into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T12:31:13.854764",
+    "input_language": "English",
+    "original_text": "Hello, I have slight pain in my chest.",
+    "vitals": {
+      "hr": "120",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: Hello, I have slight pain in my chest.",
+      "native_audio_script": "Intake information successfully integrated into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T12:31:20.968372",
+    "input_language": "English",
+    "original_text": "Hello, I have slight pain in my chest.",
+    "vitals": {
+      "hr": "100",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: Hello, I have slight pain in my chest.",
+      "native_audio_script": "Intake information successfully integrated into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T12:31:25.267733",
+    "input_language": "English",
+    "original_text": "Hello, I have slight pain in my chest.",
+    "vitals": {
+      "hr": "60",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: Hello, I have slight pain in my chest.",
+      "native_audio_script": "Intake information successfully integrated into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T12:31:47.928760",
+    "input_language": "English",
+    "original_text": "Hello, I have slight pain in my chest.",
+    "vitals": {
+      "hr": "70",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: Hello, I have slight pain in my chest.",
+      "native_audio_script": "Intake information successfully integrated into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:18:08.103579",
+    "input_language": "English",
+    "original_text": "I have large headache on left side for the past 10-12 days.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: I have large headache on left side for the past 10-12 days.",
+      "native_audio_script": "Intake information successfully integrated into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:19:49.369554",
+    "input_language": "Spanish",
+    "original_text": "Yo tengo mucho dolor en mi cabez por la diez dias.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:19:59.726647",
+    "input_language": "Spanish",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:20:30.666089",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "3000",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:20:37.016209",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "120",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:20:43.520238",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "100",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:20:50.300506",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "110",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:20:55.102362",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "115",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:20:59.852039",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "119",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:21:03.442501",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "118",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:21:07.667871",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "117",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:21:11.850905",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "116",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:21:16.128276",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "115",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:21:20.743071",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "115.9",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:21:24.631660",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "115.5",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:21:29.111082",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "115.1",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:21:34.183167",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "115.105",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:21:40.516595",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "115.001",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:21:45.078982",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "115.00000001",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Hypoxemia Risk / Tachycardia Pathway"
+      ],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:21:50.480049",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "115.0000000000000000000000000000000000000000001",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:23:00.284261",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "",
+      "bp": "300",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:23:06.707020",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "",
+      "bp": "3000",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:23:08.643379",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "",
+      "bp": "3000",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:23:12.515062",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "",
+      "bp": "300000",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:29:10.116481",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "108"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:29:12.681378",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "108"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:29:14.997518",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "108"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:29:26.631018",
+    "input_language": "English",
+    "original_text": "Yo tengo mucho dolor en mi cabeza por la diez dias.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "109"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Local Engine Translation] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus datos. Un médico lo atenderá pronto.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Required",
+      "pain_level": "Moderate",
+      "duration": "Acute",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.65,
+      "explanation": "Local backup activated due to network isolation. Core diagnostic boundaries applied safely."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:35:32.284921",
+    "input": "Tengo mucho dolor en mis piernas.",
+    "output": {
+      "translation": "[Vitals-Linked Local Fallback] Indicators: severe pain, legs pain.",
+      "native_audio_script": "Sus signos vitales y datos clínicos han sido registrados.",
+      "symptoms": [
+        "severe pain",
+        "legs pain"
+      ],
+      "body_part": "General Topography",
+      "pain_level": "Moderate",
+      "duration": "Acute onset window",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Internal Medicine Clinic",
+      "red_flags": [],
+      "confidence": 0.8,
+      "explanation": "Calculated safely via rigid rule limits. Evaluated parameters -> HR: 75.0, BP: 120, SpO2: 98.0%, Temp: 98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:36:54.233915",
+    "input": "I have pain in my head.",
+    "output": {
+      "translation": "[Vitals-Linked Local Fallback] Direct Text: 'I have pain in my head.'",
+      "native_audio_script": "Sus signos vitales y datos clínicos han sido registrados.",
+      "symptoms": [
+        "Symptom Evaluation Profile"
+      ],
+      "body_part": "Cardiopulmonary / Systemic",
+      "pain_level": "Moderate",
+      "duration": "Acute onset window",
+      "severity": "HIGH",
+      "urgency_score": 2,
+      "category": "Acute Critical Care Zone",
+      "red_flags": [
+        "High-Grade Hyperpyrexia Sepsis Warning"
+      ],
+      "confidence": 0.8,
+      "explanation": "Calculated safely via rigid rule limits. Evaluated parameters -> HR: 75.0, BP: 120, SpO2: 98.0%, Temp: 109.0°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:45:37.076153",
+    "input": "I have pain in my head.",
+    "output": {
+      "translation": "[Vitals-Linked Local Fallback] Direct Text: 'I have pain in my head.'",
+      "native_audio_script": "Sus signos vitales y datos clínicos han sido registrados.",
+      "symptoms": [
+        "Symptom Evaluation Profile"
+      ],
+      "body_part": "Cardiopulmonary / Systemic",
+      "pain_level": "Moderate",
+      "duration": "Acute onset window",
+      "severity": "HIGH",
+      "urgency_score": 2,
+      "category": "Acute Critical Care Zone",
+      "red_flags": [
+        "High-Grade Hyperpyrexia Sepsis Warning"
+      ],
+      "confidence": 0.8,
+      "explanation": "Calculated safely via rigid rule limits. Evaluated parameters -> HR: 75.0, BP: 120, SpO2: 98.0%, Temp: 109.0°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T14:59:32.884261",
+    "input_language": "English",
+    "original_text": "My hand is turning bluish purple and bleeding.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: My hand is turning bluish purple and bleeding.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T15:32:55.212370",
+    "input_language": "English",
+    "original_text": "My right hand is bleeding at the wrist ad turning blue.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: My right hand is bleeding at the wrist ad turning blue.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T15:33:05.774035",
+    "input_language": "English",
+    "original_text": "My right hand is bleeding at the wrist and turning blue.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: My right hand is bleeding at the wrist and turning blue.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T15:34:43.330082",
+    "input_language": "English",
+    "original_text": "🧠 Acute Sudden Headache / Head Trauma and Dizziness",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "105"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: 🧠 Acute Sudden Headache / Head Trauma and Dizziness",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "HIGH",
+      "urgency_score": 2,
+      "category": "Acute Medical Intervention Zone",
+      "red_flags": [
+        "High-Grade Pyrexia / Potential Sepsis Pathway"
+      ],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=105.0°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T15:35:20.729552",
+    "input_language": "English",
+    "original_text": "Hand bleeding at wrist like kife cut. Truning blue. A lot of pain there.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "105"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: Hand bleeding at wrist like kife cut. Truning blue. A lot of pain there.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "HIGH",
+      "urgency_score": 2,
+      "category": "Acute Medical Intervention Zone",
+      "red_flags": [
+        "High-Grade Pyrexia / Potential Sepsis Pathway"
+      ],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=105.0°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T15:51:41.519606",
+    "input_language": "English",
+    "model_used": "llama-3.3-70b-versatile",
+    "original_text": "My hand is bleeding severely at the wrist.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: My hand is bleeding severely at the wrist.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T15:58:25.924117",
+    "input_language": "English",
+    "model_used": "llama-3.3-70b-versatile",
+    "original_text": "hi",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "109"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: hi",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "HIGH",
+      "urgency_score": 2,
+      "category": "Acute Medical Intervention Zone",
+      "red_flags": [
+        "High-Grade Pyrexia / Potential Sepsis Pathway"
+      ],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=109.0°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T15:58:35.444810",
+    "input_language": "English",
+    "model_used": "llama-3.3-70b-versatile",
+    "original_text": "hi",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "100"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: hi",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=100.0°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T15:58:39.732967",
+    "input_language": "English",
+    "model_used": "llama-3.3-70b-versatile",
+    "original_text": "hi",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "100"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: hi",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=100.0°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T15:58:40.808914",
+    "input_language": "English",
+    "model_used": "llama-3.3-70b-versatile",
+    "original_text": "hi",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "100"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: hi",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=100.0°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T15:58:41.823995",
+    "input_language": "English",
+    "model_used": "llama-3.3-70b-versatile",
+    "original_text": "hi",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "100"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: hi",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=100.0°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T15:59:03.436222",
+    "input_language": "English",
+    "model_used": "llama-3.3-70b-versatile",
+    "original_text": "I have a lot of back pain.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: I have a lot of back pain.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T15:59:03.896956",
+    "input_language": "English",
+    "model_used": "llama-3.3-70b-versatile",
+    "original_text": "I have a lot of back pain.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: I have a lot of back pain.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T15:59:56.099533",
+    "input_language": "English",
+    "model_used": "openai/gpt-oss-120b",
+    "original_text": "I have a lot of back pain.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: I have a lot of back pain.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T16:02:37.109620",
+    "input_language": "English",
+    "model_used": "llama-3.1-8b-instant",
+    "original_text": "I have a lot of back pain.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: I have a lot of back pain.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T16:59:15.293155",
+    "input_language": "English",
+    "model_used": "groq/llama-3.3-70b-versatile",
+    "original_text": "Bleeding forehead, very deep gash.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: Bleeding forehead, very deep gash.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T16:59:41.914855",
+    "input_language": "English",
+    "model_used": "gpt-4o-mini",
+    "original_text": "Bleeding forehead, very deep gash.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: Bleeding forehead, very deep gash.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T16:59:51.771515",
+    "input_language": "English",
+    "model_used": "gpt-4o",
+    "original_text": "Bleeding forehead, very deep gash.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: Bleeding forehead, very deep gash.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T16:59:58.007336",
+    "input_language": "English",
+    "model_used": "qwen/qwen-2.5-72b-instruct",
+    "original_text": "Bleeding forehead, very deep gash.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: Bleeding forehead, very deep gash.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T17:00:07.313481",
+    "input_language": "English",
+    "model_used": "anthropic/claude-3.5-sonnet",
+    "original_text": "Bleeding forehead, very deep gash.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: Bleeding forehead, very deep gash.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T21:18:43.293391",
+    "input_language": "English",
+    "model_used": "groq/llama-3.3-70b-versatile",
+    "original_text": "check my bp",
+    "vitals": {
+      "hr": "",
+      "bp": "200",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Rule-Engine Fallback] Patient presents with: check my bp",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation Profile",
+      "severity": "HIGH",
+      "urgency_score": 2,
+      "category": "Acute Medical Intervention Zone",
+      "red_flags": [
+        "Aberrant Blood Pressure Range"
+      ],
+      "confidence": 0.75,
+      "explanation": "Calculated locally via backup boundaries due to network timeout or environment key faults. Active constraints evaluated: HR=75.0, BP Systolic=200.0, SpO2=98.0%."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T21:19:05.319421",
+    "input_language": "English",
+    "model_used": "groq/llama-3.3-70b-versatile",
+    "original_text": "I am totally fine.",
+    "vitals": {
+      "hr": "",
+      "bp": "200",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Rule-Engine Fallback] Patient presents with: I am totally fine.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation Profile",
+      "severity": "HIGH",
+      "urgency_score": 2,
+      "category": "Acute Medical Intervention Zone",
+      "red_flags": [
+        "Aberrant Blood Pressure Range"
+      ],
+      "confidence": 0.75,
+      "explanation": "Calculated locally via backup boundaries due to network timeout or environment key faults. Active constraints evaluated: HR=75.0, BP Systolic=200.0, SpO2=98.0%."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T21:19:24.053254",
+    "input_language": "English",
+    "model_used": "groq/llama-3.3-70b-versatile",
+    "original_text": "I am totally fine.",
+    "vitals": {
+      "hr": "",
+      "bp": "120",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Rule-Engine Fallback] Patient presents with: I am totally fine.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation Profile",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated locally via backup boundaries due to network timeout or environment key faults. Active constraints evaluated: HR=75.0, BP Systolic=120.0, SpO2=98.0%."
+    }
+  },
+  {
+    "timestamp": "2026-06-28T21:19:57.533358",
+    "input_language": "English",
+    "model_used": "gpt-4o",
+    "original_text": "I am totally fine.",
+    "vitals": {
+      "hr": "",
+      "bp": "120",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Rule-Engine Fallback] Patient presents with: I am totally fine.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation Profile",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated locally via backup boundaries due to network timeout or environment key faults. Active constraints evaluated: HR=75.0, BP Systolic=120.0, SpO2=98.0%."
+    }
+  },
+  {
+    "timestamp": "2026-06-29T16:03:04.510892",
+    "input_language": "English",
+    "model_used": "groq/llama-3.3-70b-versatile",
+    "original_text": "hi",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Rule-Engine Fallback] Patient presents with: hi",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation Profile",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated locally via backup boundaries due to network timeout or environment key faults. Active constraints evaluated: HR=75.0, BP Systolic=120, SpO2=98.0%."
+    }
+  },
+  {
+    "timestamp": "2026-06-29T16:04:59.238664",
+    "input_language": "English",
+    "model_used": "groq/llama-3.3-70b-versatile",
+    "original_text": "I have a large head ache",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Rule-Engine Fallback] Patient presents with: I have a large head ache",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation Profile",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated locally via backup boundaries due to network timeout or environment key faults. Active constraints evaluated: HR=75.0, BP Systolic=120, SpO2=98.0%."
+    }
+  },
+  {
+    "timestamp": "2026-06-29T16:05:58.442177",
+    "input_language": "English",
+    "model_used": "groq/llama-3.3-70b-versatile",
+    "original_text": "MY hand is bleeding badly at the wrist.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Rule-Engine Fallback] Patient presents with: MY hand is bleeding badly at the wrist.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation Profile",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated locally via backup boundaries due to network timeout or environment key faults. Active constraints evaluated: HR=75.0, BP Systolic=120, SpO2=98.0%."
+    }
+  },
+  {
+    "timestamp": "2026-06-29T16:06:21.254450",
+    "input_language": "English",
+    "model_used": "groq/llama-3.3-70b-versatile",
+    "original_text": "MY hand is bleeding badly at the wrist.",
+    "vitals": {
+      "hr": "100",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Rule-Engine Fallback] Patient presents with: MY hand is bleeding badly at the wrist.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation Profile",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated locally via backup boundaries due to network timeout or environment key faults. Active constraints evaluated: HR=100.0, BP Systolic=120, SpO2=98.0%."
+    }
+  },
+  {
+    "timestamp": "2026-06-29T21:57:23.568019",
+    "input_language": "English",
+    "model_used": "groq/llama-3.3-70b-versatile",
+    "original_text": "my head is hurting",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Rule-Engine Fallback] Patient presents with: my head is hurting",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation Profile",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated locally via backup boundaries due to network timeout or environment key faults. Active constraints evaluated: HR=75.0, BP Systolic=120, SpO2=98.0%."
+    }
+  },
+  {
+    "record_id": "20260630160042-973",
+    "timestamp": "2026-06-30T16:00:42.096088",
+    "input_language": "English",
+    "model_used": "groq/llama-3.3-70b-versatile",
+    "fallback_used": true,
+    "original_text": "My head is throbbing for past 15 days",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Rule-Engine Fallback Matrix] Patient presents with: My head is throbbing for past 15 days",
+      "native_audio_script": "Intake parameters integrated successfully into local emergency records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation Profile",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "wait_time_estimate": "45-60 mins",
+      "explanation": "Calculated locally via emergency fallback boundaries due to upstream timeout limitations. Metrics monitored: HR=75.0, BP Systolic=120.0, SpO2=98.0%.",
+      "fallback_used": true
+    }
+  },
+  {
+    "timestamp": "2026-06-30T18:47:11.516912",
+    "input_language": "English",
+    "original_text": "I have large headache.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: I have large headache.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-30T20:15:17.057792",
+    "input_language": "English",
+    "original_text": "I have some symptoms I'm feeling with low can you tell me what should I do",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: I have some symptoms I'm feeling with low can you tell me what should I do",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-30T20:21:53.950893",
+    "input_language": "English",
+    "original_text": "I am feeling a lot f pain on my hand. My wrist is bleeding from a knife slash and my hand is turning blue. Could this maybe be for the poison.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: I am feeling a lot f pain on my hand. My wrist is bleeding from a knife slash and my hand is turning blue. Could this maybe be for the poison.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-30T20:22:01.747354",
+    "input_language": "English",
+    "original_text": "I am feeling a lot of pain on my hand. My wrist is bleeding from a knife slash and my hand is turning blue. Could this maybe be for the poison.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: I am feeling a lot of pain on my hand. My wrist is bleeding from a knife slash and my hand is turning blue. Could this maybe be for the poison.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-30T20:24:32.041110",
+    "input_language": "English",
+    "original_text": "I am feeling a lot of pain on my hand. My wrist is bleeding from a knife slash and my hand is turning blue. Could this maybe be for the poison.",
+    "vitals": {
+      "hr": "180",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: I am feeling a lot of pain on my hand. My wrist is bleeding from a knife slash and my hand is turning blue. Could this maybe be for the poison.",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute Presentation",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Extreme Unstable Tachycardia"
+      ],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=180.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F."
+    }
+  },
+  {
+    "timestamp": "2026-06-30T20:31:38.649866",
+    "input_language": "Spanish",
+    "original_text": "yo tengo mucho dolor en mi cabeza",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus signos vitales y datos clínicos con éxito.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F. Keyword cues detected: none."
+    }
+  },
+  {
+    "timestamp": "2026-06-30T20:40:42.117649",
+    "input_language": "English",
+    "original_text": "Heat ache",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "109"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: Heat ache",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "HIGH",
+      "urgency_score": 2,
+      "category": "Acute Medical Intervention Zone",
+      "red_flags": [
+        "High-Grade Pyrexia / Potential Sepsis Pathway"
+      ],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=109.0°F. Keyword cues detected: none."
+    }
+  },
+  {
+    "timestamp": "2026-06-30T20:46:32.012459",
+    "input_language": "English",
+    "original_text": "hello I have a lot of pain in my head",
+    "vitals": {
+      "hr": "135",
+      "bp": "150/100",
+      "spo2": "",
+      "temp": "104"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: hello I have a lot of pain in my head | Clinical keywords: ache, discomfort, head injury, head trauma, headache, pain, tachycardia",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Severe",
+      "duration": "Acute Presentation",
+      "severity": "CRITICAL",
+      "urgency_score": 1,
+      "category": "Emergency Resuscitation Unit",
+      "red_flags": [
+        "Extreme Unstable Tachycardia"
+      ],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=135.0, BP Systolic=150.0, SpO2=98.0%, Temp=104.0°F. Keyword cues detected: ache, discomfort, head injury, head trauma, headache, pain, tachycardia."
+    }
+  },
+  {
+    "timestamp": "2026-06-30T20:53:39.996777",
+    "input_language": "English",
+    "original_text": "My head hurts.",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": "104"
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: My head hurts. | Clinical keywords: head injury, head trauma, headache",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "Unspecified Symptom Cluster"
+      ],
+      "body_part": "Cardiopulmonary System",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "HIGH",
+      "urgency_score": 2,
+      "category": "Acute Medical Intervention Zone",
+      "red_flags": [
+        "High-Grade Pyrexia / Potential Sepsis Pathway"
+      ],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=104.0°F. Keyword cues detected: head injury, head trauma, headache."
+    }
+  },
+  {
+    "timestamp": "2026-06-30T21:05:25.052907",
+    "input_language": "English",
+    "original_text": "मेरा सर बहुत दुख रहा है मेरा हाथ भी बहुत दुख रहा है",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: मेरा सर बहुत दुख रहा है मेरा हाथ भी बहुत दुख रहा है",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "reported symptoms"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F. Keyword cues detected: none."
+    }
+  },
+  {
+    "timestamp": "2026-06-30T21:05:45.472096",
+    "input_language": "Spanish",
+    "original_text": "yo tengo mucho dolor en mi cabeza",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: head trauma, pain",
+      "native_audio_script": "Hemos recibido sus signos vitales y datos clínicos con éxito.",
+      "symptoms": [
+        "head trauma",
+        "pain"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F. Keyword cues detected: none."
+    }
+  },
+  {
+    "timestamp": "2026-06-30T21:06:36.017417",
+    "input_language": "Hindi",
+    "original_text": "मेरा सर बहुत दुख रहा है 18 दिन के लिए मैं क्या करूं",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: मेरा सर बहुत दुख रहा है 18 दिन के लिए मैं क्या करूं",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "reported symptoms"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F. Keyword cues detected: none."
+    }
+  },
+  {
+    "timestamp": "2026-06-30T21:06:57.455448",
+    "input_language": "Hindi",
+    "original_text": "मेरा पैर बहुत दुख रहा है मेरा सर भी बहुत दुख रहा है बहुत जोर के दुख रहा है क्या करूं",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: मेरा पैर बहुत दुख रहा है मेरा सर भी बहुत दुख रहा है बहुत जोर के दुख रहा है क्या करूं",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "reported symptoms"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F. Keyword cues detected: none."
+    }
+  },
+  {
+    "timestamp": "2026-07-01T16:00:43.924646",
+    "input_language": "English",
+    "original_text": "Hello, I have a big headache,",
+    "vitals": {
+      "hr": "",
+      "bp": "",
+      "spo2": "",
+      "temp": ""
+    },
+    "allergies": "",
+    "medications": "",
+    "processed_output": {
+      "translation": "[Vitals-Linked Local Fallback] Patient presents with: Hello, I have a big headache, | Clinical keywords: ache, concussion, discomfort, head injury, head trauma, headache, pain, soreness",
+      "native_audio_script": "Intake parameters integrated successfully into local records.",
+      "symptoms": [
+        "ache",
+        "concussion",
+        "discomfort"
+      ],
+      "body_part": "General Evaluation Needed",
+      "pain_level": "Moderate",
+      "duration": "Acute Presentation",
+      "severity": "MEDIUM",
+      "urgency_score": 3,
+      "category": "General Medical Outpatient Clinic",
+      "red_flags": [],
+      "confidence": 0.75,
+      "explanation": "Calculated safely via strict local rule boundaries. Evaluated fields: HR=75.0, BP Systolic=120, SpO2=98.0%, Temp=98.6°F. Keyword cues detected: ache, concussion, discomfort, head injury, head trauma, headache, pain, soreness."
+    }
+  }
+]

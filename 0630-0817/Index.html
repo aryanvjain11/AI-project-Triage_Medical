@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clinical Intelligence & Multilingual Triage Terminal</title>
+    <style>
+        :root {
+            --bg-main: #f8fafc;
+            --surface-card: #ffffff;
+            --txt-primary: #0f172a;
+            --txt-secondary: #475569;
+            --brand-primary: #0284c7;
+            --brand-suvscode-remote://codespaces%2Bfantastic-pancake-97jjp5gqx6wphqjw/workspacesccess: #10b981;
+            --brand-danger: #ef4444;
+            --brand-warning: #f59e0b;
+            --border-color: #e2e8f0;
+        }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg-main); color: var(--txt-primary); margin: 0; padding: 24px; }
+        .app-grid { max-width: 1400px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .card { background: var(--surface-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05); }
+        .full-width { grid-column: 1 / -1; }
+        header { text-align: center; margin-bottom: 24px; }
+        header h1 { margin: 0; font-size: 28px; color: #0f172a; font-weight: 700; letter-spacing: -0.025em; }
+        header p { margin: 6px 0 0 0; color: var(--txt-secondary); font-size: 14px; }
+        
+        label { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--txt-secondary); margin-bottom: 6px; margin-top: 14px; }
+        input, select, textarea { width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: #fff; font-size: 14px; color: var(--txt-primary); transition: all 0.2s; box-sizing: border-box; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--brand-primary); box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15); }
+        
+        .quick-select-row { display: flex; gap: 10px; margin-bottom: 4px; margin-top: 4px; }
+        .quick-btn { flex: 1; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: #f1f5f9; cursor: pointer; font-size: 13px; font-weight: 600; text-align: center; }
+        .quick-btn:hover { background: #e2e8f0; }
+
+        .vitals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .btn-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; justify-content: center; }
+        button { padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; border: 1px solid transparent; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+        
+        .btn-prime { background: var(--brand-primary); color: white; }
+        .btn-prime:hover { background: #0369a1; }
+        .btn-sec { background: #f1f5f9; color: var(--txt-secondary); border-color: var(--border-color); }
+        .btn-sec:hover { background: #e2e8f0; }
+        .btn-danger { background: rgba(239,68,68,0.1); color: var(--brand-danger); }
+        .btn-danger:hover { background: rgba(239,68,68,0.2); }
+        
+        .chat-container { border: 1px solid var(--border-color); border-radius: 12px; background: #f8fafc; padding: 12px; margin-top: 12px; }
+        .chat-box { height: 160px; overflow-y: auto; padding: 4px; display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px; }
+        .chat-bubble { padding: 8px 12px; border-radius: 12px; max-width: 85%; font-size: 13px; line-height: 1.4; box-sizing: border-box; }
+        .bubble-bot { background: #e0f2fe; color: #0369a1; align-self: flex-start; }
+        .bubble-user { background: #e2e8f0; color: var(--txt-primary); align-self: flex-end; text-align: right; }
+        
+        .queue-list { max-height: 320px; overflow-y: auto; }
+        .queue-item { display: flex; justify-content: space-between; align-items: center; padding: 12px; border: 1px solid var(--border-color); border-left: 6px solid #cbd5e1; border-radius: 8px; margin-bottom: 8px; font-size: 13px; background: white; transition: all 0.2s; }
+        .pane-layout { display: flex; gap: 16px; margin-top: 14px; }
+        .pane-item { flex: 1; padding: 12px; background: #f1f5f9; border-radius: 8px; font-size: 13px; border: 1px solid var(--border-color); }
+        
+        .badge { padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; }
+        .badge-crit { background: rgba(239,68,68,0.15); color: var(--brand-danger); }
+        .badge-warn { background: rgba(245,158,11,0.15); color: var(--brand-warning); }
+        .badge-ok { background: rgba(16,185,129,0.15); color: var(--brand-success); }
+        
+        #results-zone { margin-top: 24px; border-radius: 16px; transition: all 0.3s ease; }
+        .critical-alert-active { animation: emergencyPulse 2.5s infinite; border: 2px solid var(--brand-danger); }
+        @keyframes emergencyPulse { 0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); } 70% { box-shadow: 0 0 0 12px rgba(239, 68, 68, 0); } 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); } }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 id="ui-main-title">🏥 Clinical AI Multilingual Triage Hub</h1>
+    <p id="ui-sub-title">⚡ Enterprise Emergency Medicine Intake & Assessment Console</p>
+</header>
+
+<div class="app-grid">
+    <div class="card">
+        <h3 id="ui-header-intake" style="margin-top:0; color:#0f172a;">📥 1. Patient Interactive Intake</h3>
+        
+        <label id="ui-lbl-lang">🌐 Preferred Interface Language</label>
+        <select id="language" onchange="applyGlobalUILocalization()">
+            <option value="English">English</option>
+            <option value="Spanish">Spanish (Español)</option>
+            <option value="Hindi">Hindi (हिंदी)</option>
+            <option value="French">French (Français)</option>
+            <option value="Mandarin">Mandarin (普通话)</option>
+        </select>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+            <div>
+                <label id="ui-lbl-allergies">🚫 Drug Allergies</label>
+                <input type="text" id="allergies" placeholder="e.g., Penicillin, Latex">
+            </div>
+            <div>
+                <label id="ui-lbl-meds">💊 Active Medications</label>
+                <input type="text" id="medications" placeholder="e.g., Lisinopril, Metformin">
+            </div>
+        </div>
+
+        <label id="ui-lbl-quick">⚡ Visual Quick-Select Indicators</label>
+        <div class="quick-select-row">
+            <div class="quick-btn" onclick="injectQuickIndicator('❤️ Severe Chest Discomfort / Crushing Chest Pain')">❤️ Chest</div>
+            <div class="quick-btn" onclick="injectQuickIndicator('💨 Severe Difficulty Breathing / Shortness of Breath')">💨 Breath</div>
+            <div class="quick-btn" onclick="injectQuickIndicator('🩸 Severe Uncontrolled Bleeding / Trauma Active Injury')">🩸 Bleed</div>
+            <div class="quick-btn" onclick="injectQuickIndicator('🧠 Acute Sudden Headache / Head Trauma and Dizziness')">🧠 Head</div>
+        </div>
+
+        <label id="ui-lbl-vitals">🫀 Physiological Vital Metrics</label>
+        <div class="vitals-grid">
+            <input type="number" id="vital-hr" placeholder="HR (bpm) 💓">
+            <input type="text" id="vital-bp" placeholder="BP (e.g. 120/80) 🩺">
+            <input type="number" id="vital-spo2" placeholder="SpO2 (%) 🫁">
+            <input type="number" step="0.1" id="vital-temp" placeholder="Temp (°F) 🌡️">
+        </div>
+
+        <label id="ui-lbl-symptoms">📝 Chief Medical Concerns & Symptoms</label>
+        <textarea id="symptoms" rows="3" placeholder="Describe clinical symptoms here..."></textarea>
+
+        <label id="ui-lbl-chat-title">💬 Multilingual Reception & Hospitality Chat</label>
+        <div class="chat-container">
+            <div class="chat-box" id="chat-stream">
+                <div class="chat-bubble bubble-bot" id="chat-welcome-bubble">Hello, I am your digital hospitality assistant. Feel free to chat with me while you wait.</div>
+            </div>
+            <div style="display:flex; gap:8px;">
+                <input type="text" id="chat-input" placeholder="Ask about wait times, amenities, or general info...">
+                <button class="btn-prime" onclick="sendChatMessage()">Send</button>
+                <button class="btn-danger" style="margin:0;" onclick="clearChatWorkspace()">Clear</button>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button id="ui-btn-voice-in" onclick="recordSymptomsSecure()" class="btn-sec" style="color:var(--brand-success)">🎙️ Voice Input</button>
+            <button id="ui-btn-analyze" onclick="analyzeSymptoms()" class="btn-prime">🔍 Process Analytics</button>
+            <button id="ui-btn-voice-out" onclick="speakRecommendation()" class="btn-sec">🔊 Voice Out</button>
+            <button onclick="window.print()" class="btn-sec">🖨️ Print</button>
+            <button class="btn-danger" onclick="masterFormClearReset()">Clear All</button>
+        </div>
+        <div id="voice-status" style="font-size:11px; color:var(--txt-secondary); text-align:center; margin-top:6px;"></div>
+    </div>
+
+    <div class="card">
+        <h3 id="ui-header-board" style="margin-top:0;">📊 2. Emergency Control Center Board</h3>
+        
+        <div style="display:flex; gap:12px; margin-bottom:16px;">
+            <div style="flex:1; background:#f1f5f9; padding:12px; border-radius:8px; text-align:center;">
+                <div id="stat-count" style="font-size:20px; font-weight:700;">0</div>
+                <div style="font-size:11px; color:var(--txt-secondary); font-weight:600; text-transform:uppercase;">Waiting Queue</div>
+            </div>
+            <div style="flex:1; background:rgba(239,68,68,0.1); padding:12px; border-radius:8px; text-align:center;">
+                <div id="stat-critical" style="font-size:20px; font-weight:700; color:var(--brand-danger);">0</div>
+                <div style="font-size:11px; color:var(--brand-danger); font-weight:600; text-transform:uppercase;">Critical Alerts</div>
+            </div>
+        </div>
+
+        <h4 id="ui-lbl-queue-title" style="margin:0 0 10px 0; font-size:14px; color:var(--txt-secondary);">📋 Priority Sorted Triage Line</h4>
+        <div id="virtual-queue" class="queue-list"></div>
+
+        <label style="margin-top:20px;">Patient Update Delta Suite</label>
+        <input type="text" id="delta-text" placeholder="Describe clinical status updates for active tracker...">
+        <button class="btn-prime" style="width:100%; margin-top:8px;" onclick="submitDeltaUpdate()">Submit Update Vector</button>
+    </div>
+
+    <div class="card full-width" id="results-zone">
+        <div id="results" style="text-align:center; color:var(--txt-secondary); padding:12px 0;">
+            Terminal telemetry line idle. Supply patient input vectors to compile live triage diagnostic matrix.
+        </div>
+    </div>
+</div>
+
+<script>
+const dictionary = {
+    "English": {
+        "mainTitle": "🏥 Clinical AI Multilingual Triage Hub", "subTitle": "⚡ Enterprise Emergency Medicine Intake & Assessment Console",
+        "intake": "📥 1. Patient Interactive Intake", "langLbl": "🌐 Preferred Interface Language", "vitalsLbl": "𫫀 Physiological Vital Metrics",
+        "symptomsLbl": "📝 Chief Medical Concerns & Symptoms", "voiceIn": "🎙️ Voice Input", "analyze": "🔍 Process Analytics",
+        "voiceOut": "🔊 Voice Out", "board": "📊 2. Emergency Control Center Board", "queueTitle": "📋 Priority Sorted Triage Line",
+        "placeholder": "Describe clinical symptoms here...", "idle": "Terminal telemetry line idle. Supply patient input vectors to compile live triage diagnostic matrix.",
+        "hr": "HR (bpm) 💓", "bp": "BP (mmHg) 🩺", "spo2": "SpO2 (%) 𫫁", "temp": "Temp (°F) 🌡️", "allergies": "🚫 Drug Allergies", "meds": "💊 Active Medications",
+        "chatTitle": "💬 Multilingual Reception & Hospitality Chat", "chatWelcome": "Hello, I am your digital hospitality assistant. Feel free to chat with me while you wait."
+    },
+    "Spanish": {
+        "mainTitle": "🏥 Centro de Triaje Clínico de Inteligencia Artificial", "subTitle": "⚡ Terminal de Admisión y Evaluación de Medicina de Emergencia",
+        "intake": "📥 1. Admisión Interactiva del Paciente", "langLbl": "🌐 Idioma de Interfaz Preferido", "vitalsLbl": "𫫀 Métrica de Signos Vitales",
+        "symptomsLbl": "📝 Síntomas y Preocupaciones Médicas Principales", "voiceIn": "🎙️ Entrada de Voz", "analyze": "🔍 Procesar Analítica",
+        "voiceOut": "🔊 Salida de Voz", "board": "📊 2. Panel del Centro de Control de Emergencias", "queueTitle": "📋 Línea de Triaje Clasificada por Prioridad",
+        "placeholder": "Describa los síntomas clínicos aquí...", "idle": "Telemetría del sistema inactiva. Proporcione vectores de entrada.",
+        "hr": "FC (lpm) 💓", "bp": "PA (mmHg) 🩺", "spo2": "SpO2 (%) 𫫁", "temp": "Temp (°F) 🌡️", "allergies": "🚫 Alergias a Medicamentos", "meds": "💊 Medicamentos Activos",
+        "chatTitle": "💬 Chat Multilingüe de Recepción y Hospitalidad", "chatWelcome": "Hola, soy su asistente digital de hospitalidad. No dude en charlar conmigo mientras espera."
+    },
+    "Hindi": {
+        "mainTitle": "🏥 क्लिनिकल एआई बहुभाषी ट्राइएज हब", "subTitle": "⚡ आपातकालीन चिकित्सा निर्णय-सहायता टर्मिनल",
+        "intake": "📥 1. रोगी पंजीकरण", "langLbl": "🌐 पसंदीदा इंटरफ़ेस भाषा", "vitalsLbl": "𫫀 शारीरिक महत्वपूर्ण मेट्रिक्स",
+        "symptomsLbl": "📝 चिकित्सीय चिंताएं और लक्षण", "voiceIn": "🎙️ वॉयस इनपुट", "analyze": "🔍 लक्षणों का विश्लेषण करें",
+        "voiceOut": "🔊 वॉयस आउटपुट", "board": "📊 2. आपातकालीन विभाग नियंत्रण बोर्ड", "queueTitle": "📋 लाइव प्राथमिकता ट्राइएज कतार",
+        "placeholder": "लक्षणों का वर्णन करें...", "idle": "सिस्टम टेलीमेट्री निष्क्रिय है। लाइव डायग्नोस्टिक्स संकलित करने के लिए इनपुट प्रदान करें।",
+        "hr": "हृदय गति (bpm) 💓", "bp": "रक्तचाप (mmHg) 🩺", "spo2": "ऑक्सीजन संतृप्ति SpO2 (%) 𫫁", "temp": "तापमान (°F) 🌡️", "allergies": "🚫 दवा एलर्जी", "meds": "💊 सक्रिय दवाएं",
+        "chatTitle": "💬 बहुभाषी स्वागत और आतिथ्य चैट", "chatWelcome": "नमस्ते, मैं आपका डिजिटल आतिथ्य सहायक हूँ। प्रतीक्षा करते समय मुझसे बात कर सकते हैं।"
+    },
+    "French": {
+        "mainTitle": "🏥 Hub de Triage Clinique IA Multilingue", "subTitle": "⚡ Terminal d'Aide à la Décision en Médecine d'Urgence",
+        "intake": "📥 1. Admission Interactive du Patient", "langLbl": "🌐 Langue de l'Interface Préférée", "vitalsLbl": "𫫀 Signes Vitaux Physiologiques",
+        "symptomsLbl": "📝 Symptômes et Problèmes Médicaux Signalés", "voiceIn": "🎙️ Entrée Vocale", "analyze": "🔍 Analyser",
+        "voiceOut": "🔊 Sortie Vocale", "board": "📊 2. Tableau de Contrôle du Service des Urgences", "queueTitle": "📋 File d'Attente de Triage Prioritaire en Direct",
+        "placeholder": "Décrivez vos symptômes...", "idle": "Télémétrie du système au repos. Fournissez des données.",
+        "hr": "Fréquence Cardiaque (bpm) 💓", "bp": "Pression Artérielle (mmHg) 🩺", "spo2": "Saturation SpO2 (%) 𫫁", "temp": "Température (°F) 🌡️", "allergies": "🚫 Allergies médicamenteuses", "meds": "💊 Médicaments actifs",
+        "chatTitle": "💬 Chat d'accueil et d'hospitalité multilingue", "chatWelcome": "Bonjour, je suis votre assistant d'accueil virtuel. N'hésitez pas à discuter avec moi en attendant."
+    },
+    "Mandarin": {
+        "mainTitle": "🏥 临床AI多语言分诊中心", "subTitle": "⚡ 急诊医学决策支持终端",
+        "intake": "📥 1. 互动式患者接诊", "langLbl": "🌐 首选界面语言", "vitalsLbl": "𫫀 生理体征指标",
+        "symptomsLbl": "📝 描述医疗问题与症状", "voiceIn": "🎙️ 语音输入", "analyze": "🔍 分析症状",
+        "voiceOut": "🔊 语音输出", "board": "📊 2. 急诊科控制看板", "queueTitle": "📋 实时优先级分诊队列",
+        "placeholder": "请描述您的症状...", "idle": "系统遥测闲置。请输入患者病情数据以生成实时诊断信息。",
+        "hr": "心率 (bpm) 💓", "bp": "血压 (mmHg) 🩺", "spo2": "血氧饱和度 SpO2 (%) 𫫁", "temp": "温度 (°F) 🌡️", "allergies": "🚫 药物过敏史", "meds": "💊 正在服用的药物",
+        "chatTitle": "💬 多语言前台与接待聊天", "chatWelcome": "您好，我是您的数字化接待助手。在等待时，欢迎与我交流。"
+    }
+};
+
+let currentQueueCount = 0;
+let activeCriticalCases = 0;
+let activePatientTrackers = {};
+let activeViewingId = null;
+let queueListArray = [];
+
+function applyGlobalUILocalization() {
+    const lang = document.getElementById("language").value;
+    const lData = dictionary[lang] || dictionary["English"];
+
+    document.getElementById("ui-main-title").innerText = lData.mainTitle;
+    document.getElementById("ui-sub-title").innerText = lData.subTitle;
+    document.getElementById("ui-header-intake").innerText = lData.intake;
+    document.getElementById("ui-lbl-lang").innerText = lData.langLbl;
+    document.getElementById("ui-lbl-vitals").innerText = lData.vitalsLbl;
+    document.getElementById("ui-lbl-symptoms").innerText = lData.symptomsLbl;
+    document.getElementById("ui-btn-voice-in").innerText = lData.voiceIn;
+    document.getElementById("ui-btn-analyze").innerText = lData.analyze;
+    document.getElementById("ui-btn-voice-out").innerText = lData.voiceOut;
+    document.getElementById("ui-header-board").innerText = lData.board;
+    document.getElementById("ui-lbl-queue-title").innerText = lData.queueTitle;
+    document.getElementById("symptoms").placeholder = lData.placeholder;
+    document.getElementById("ui-lbl-allergies").innerText = lData.allergies;
+    document.getElementById("ui-lbl-meds").innerText = lData.meds;
+    document.getElementById("ui-lbl-chat-title").innerText = lData.chatTitle;
+    
+    document.getElementById("vital-hr").placeholder = lData.hr;
+    document.getElementById("vital-bp").placeholder = lData.bp;
+    document.getElementById("vital-spo2").placeholder = lData.spo2;
+    document.getElementById("vital-temp").placeholder = lData.temp;
+
+    const welcomeBubble = document.getElementById("chat-welcome-bubble");
+    if(welcomeBubble) {
+        welcomeBubble.innerText = lData.chatWelcome;
+    }
+}
+
+function injectQuickIndicator(val) {
+    document.getElementById("symptoms").value = val;
+}
+
+async function sendChatMessage() {
+    const text = document.getElementById("chat-input").value;
+    const lang = document.getElementById("language").value;
+    if(!text.trim()) return;
+
+    const stream = document.getElementById("chat-stream");
+    stream.innerHTML += `<div class="chat-bubble bubble-user">${text}</div>`;
+    document.getElementById("chat-input").value = "";
+    stream.scrollTop = stream.scrollHeight;
+
+    try {
+        const res = await fetch("/chat", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ message: text, language: lang })
+        });
+        const data = await res.json();
+        stream.innerHTML += `<div class="chat-bubble bubble-bot">${data.reply}</div>`;
+        stream.scrollTop = stream.scrollHeight;
+    } catch(err) {
+        stream.innerHTML += `<div class="chat-bubble bubble-bot" style="color:red;">Loss of signal to chat backplane.</div>`;
+    }
+}
+
+function clearChatWorkspace() {
+    const stream = document.getElementById("chat-stream");
+    const lang = document.getElementById("language").value;
+    const lData = dictionary[lang] || dictionary["English"];
+    stream.innerHTML = `<div class="chat-bubble bubble-bot" id="chat-welcome-bubble">${lData.chatWelcome}</div>`;
+}
+
+function masterFormClearReset() {
+    document.getElementById("symptoms").value = "";
+    document.getElementById("vital-hr").value = "";
+    document.getElementById("vital-bp").value = "";
+    document.getElementById("vital-spo2").value = "";
+    document.getElementById("vital-temp").value = "";
+    document.getElementById("allergies").value = "";
+    document.getElementById("medications").value = "";
+    document.getElementById("delta-text").value = "";
+    
+    const lang = document.getElementById("language").value;
+    const lData = dictionary[lang] || dictionary["English"];
+    document.getElementById("results").innerHTML = lData.idle;
+    document.getElementById("results-zone").className = "card full-width";
+    
+    queueListArray = [];
+    activePatientTrackers = {};
+    activeViewingId = null;
+    currentQueueCount = 0;
+    activeCriticalCases = 0;
+    rebuildControlQueueUI();
+}
+
+function recordSymptomsSecure() {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const status = document.getElementById("voice-status");
+    if (!SpeechRecognition) { status.innerText = "System Speech interface unreachable."; return; }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = document.getElementById("language").value === "Spanish" ? "es-ES" : "en-US";
+    status.innerText = "🎙️ Connection open. Speak symptoms safely...";
+    recognition.start();
+
+    recognition.onresult = (e) => {
+        document.getElementById("symptoms").value = e.results[0][0].transcript;
+        status.innerText = "✔ Audio stream synchronized to buffer.";
+    };
+}
+
+async function analyzeSymptoms() {
+    const symptoms = document.getElementById("symptoms").value;
+    const language = document.getElementById("language").value;
+    if (!symptoms.trim()) return;
+
+    document.getElementById("results").innerHTML = "<p>Processing analytical clinical telemetry matrices with vital triage calculations...</p>";
+
+    const payload = {
+        text: symptoms,
+        language: language,
+        vitals: {
+            hr: document.getElementById("vital-hr").value,
+            bp: document.getElementById("vital-bp").value,
+            spo2: document.getElementById("vital-spo2").value,
+            temp: document.getElementById("vital-temp").value
+        },
+        allergies: document.getElementById("allergies").value,
+        medications: document.getElementById("medications").value
+    };
+
+    try {
+        const response = await fetch("/analyze", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        window.lastTriageResult = data;
+        
+        const ptId = "pt-" + Math.floor(Math.random() * 100000);
+        activePatientTrackers[ptId] = { data: data, originalText: symptoms };
+        activeViewingId = ptId;
+
+        renderResults(ptId);
+        
+        queueListArray.push({ id: ptId, score: data.urgency_score, category: data.category, symptom: data.symptoms[0] || 'Patient Concerns' });
+        rebuildControlQueueUI();
+    } catch(err) {
+        document.getElementById("results").innerHTML = "<p style='color:red;'>Connection failure to app.py backplane.</p>";
+    }
+}
+
+function renderResults(ptId) {
+    const pt = activePatientTrackers[ptId];
+    if(!pt) return;
+    
+    const data = pt.data;
+    const resultsDiv = document.getElementById("results");
+    const containerZone = document.getElementById("results-zone");
+
+    const isCritical = data.severity === "CRITICAL" || data.urgency_score === 1;
+    containerZone.className = "card full-width " + (isCritical ? "critical-alert-active" : "");
+
+    resultsDiv.innerHTML = `
+        <h3 style="text-align:left; margin-top:0; border-bottom:1px solid var(--border-color); padding-bottom:8px;">Diagnostic Clinical Profile</h3>
+        <div class="pane-layout">
+            <div class="pane-item"><strong>Verbatim Intake Record:</strong><br>${pt.originalText}</div>
+            <div class="pane-item"><strong>Automated Medical English Translation:</strong><br>${data.translation}</div>
+        </div>
+        <div style="font-size:13px; margin-top:14px; text-align:left; display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+            <div>
+                <p><strong>Clinical Keywords:</strong> ${data.symptoms.join(", ")}</p>
+                <p><strong>Anatomical Zone:</strong> ${data.body_part}</p>
+                <p><strong>Timeline:</strong> ${data.duration}</p>
+            </div>
+            <div>
+                <p><strong>Risk Warnings / Physiological Alerts:</strong> <span style="color:var(--brand-danger); font-weight:700;">${data.red_flags.length ? data.red_flags.join(", ") : "None standard flagged"}</span></p>
+                <p><strong>ESI Classification Level:</strong> <span id="lbl-score-${ptId}">${data.urgency_score}</span> (${data.severity})</p>
+                <p><strong>Target Destination Unit:</strong> ${data.category}</p>
+            </div>
+        </div>
+        <p style="text-align:left; font-size:13px; background:#f8fafc; padding:10px; border-radius:6px; border:1px solid var(--border-color);"><strong>Clinical Rationale:</strong> <em>${data.explanation}</em></p>
+        <div style="margin-top:14px; text-align:left; border-top:1px dashed var(--border-color); padding-top:12px;">
+            <label style="display:inline-block; margin:0 8px 0 0;">Override Urgency Category Designation:</label>
+            <select id="correction-level" style="width:auto; padding:4px;">
+                <option value="1">Level 1 (Immediate Life Support)</option>
+                <option value="2">Level 2 (High Emergency)</option>
+                <option value="3">Level 3 (Urgent / Standard)</option>
+                <option value="4">Level 4 (Less Urgent)</option>
+                <option value="5">Level 5 (Non-Urgent Outpatient)</option>
+            </select>
+            <button class="btn-prime" onclick="commitDoctorCorrection('${ptId}')" style="padding:5px 12px; font-size:12px;">Commit Shift</button>
+        </div>
+    `;
+}
+
+function rebuildControlQueueUI() {
+    const queueDiv = document.getElementById("virtual-queue");
+    queueDiv.innerHTML = "";
+    
+    // Sort Queue ascending by ESI urgency level score
+    queueListArray.sort((a, b) => a.score - b.score);
+    
+    activeCriticalCases = 0;
+    currentQueueCount = queueListArray.length;
+
+    queueListArray.forEach(p => {
+        if(p.score === 1) activeCriticalCases++;
+        
+        let badgeClass = "badge-ok";
+        if(p.score === 1) badgeClass = "badge-crit";
+        else if(p.score <= 3) badgeClass = "badge-warn";
+
+        const item = document.createElement("div");
+        item.className = "queue-item";
+        item.id = p.id;
+        item.innerHTML = `
+            <div onclick="activeViewingId='${p.id}'; renderResults('${p.id}');" style="cursor:pointer; flex:1;">
+                <strong>[${p.category}]</strong> ${p.symptom} - 
+                <span id="queue-badge-${p.id}" class="badge ${badgeClass}">ESI Level ${p.score}</span>
+            </div>
+            <button class="btn-danger" style="padding:4px 8px; font-size:11px;" onclick="assignBed('${p.id}')">Release to Bed</button>
+        `;
+        queueDiv.appendChild(item);
+    });
+
+    document.getElementById("stat-count").innerText = currentQueueCount;
+    document.getElementById("stat-critical").innerText = activeCriticalCases;
+}
+
+function commitDoctorCorrection(ptId) {
+    const selectedScore = parseInt(document.getElementById("correction-level").value, 10);
+    if (!activePatientTrackers[ptId]) return;
+
+    activePatientTrackers[ptId].data.urgency_score = selectedScore;
+    
+    const targetMatch = queueListArray.find(x => x.id === ptId);
+    if(targetMatch) {
+        targetMatch.score = selectedScore;
+    }
+    
+    rebuildControlQueueUI();
+    renderResults(ptId);
+}
+
+function submitDeltaUpdate() {
+    const delta = document.getElementById("delta-text").value;
+    if(!delta.trim() || !activeViewingId) return;
+
+    if(activePatientTrackers[activeViewingId]) {
+        activePatientTrackers[activeViewingId].originalText += ` | [Delta Status Update]: ${delta}`;
+        
+        const queueMatch = queueListArray.find(x => x.id === activeViewingId);
+        if(queueMatch) {
+            queueMatch.symptom += ` (+ Delta)`;
+        }
+        
+        renderResults(activeViewingId);
+        rebuildControlQueueUI();
+    }
+    document.getElementById("delta-text").value = "";
+}
+
+function assignBed(id) {
+    queueListArray = queueListArray.filter(x => x.id !== id);
+    if(activeViewingId === id) activeViewingId = null;
+    rebuildControlQueueUI();
+}
+
+function speakRecommendation() {
+    if (!window.lastTriageResult) return;
+    const synth = window.speechSynthesis;
+    if (!synth) return;
+    const utterance = new SpeechSynthesisUtterance(window.lastTriageResult.native_audio_script);
+    utterance.lang = document.getElementById("language").value === "Spanish" ? "es-ES" : "en-US";
+    synth.speak(utterance);
+}
+
+// Initial binding execution loop
+applyGlobalUILocalization();
+</script>
+</body>
+</html>

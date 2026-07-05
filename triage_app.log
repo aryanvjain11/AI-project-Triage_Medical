@@ -1,0 +1,430 @@
+2026-06-30 15:50:44,708 [INFO] [ROUTER INIT] Active API clients: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 15:50:45,006 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-30 15:50:45,008 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-30 15:50:45,012 [INFO]  * Restarting with stat
+2026-06-30 15:50:49,993 [INFO] [ROUTER INIT] Active API clients: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 15:50:50,042 [WARNING]  * Debugger is active!
+2026-06-30 15:50:50,047 [INFO]  * Debugger PIN: 521-104-728
+2026-06-30 15:50:50,244 [INFO] 127.0.0.1 - - [30/Jun/2026 15:50:50] "GET / HTTP/1.1" 200 -
+2026-06-30 15:50:51,289 [INFO] 127.0.0.1 - - [30/Jun/2026 15:50:51] "GET / HTTP/1.1" 200 -
+2026-06-30 15:57:14,719 [INFO]  * Detected change in 'C:\\Users\\himan\\phishing_detector\\BackEnd\\app.py', reloading
+2026-06-30 15:57:15,716 [INFO]  * Restarting with stat
+2026-06-30 15:57:20,005 [INFO] [ROUTER INIT] Active API clients: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 15:57:20,148 [WARNING]  * Debugger is active!
+2026-06-30 15:57:20,155 [INFO]  * Debugger PIN: 521-104-728
+2026-06-30 15:57:21,399 [INFO] 127.0.0.1 - - [30/Jun/2026 15:57:21] "GET / HTTP/1.1" 200 -
+2026-06-30 15:58:41,445 [INFO]  * Detected change in 'C:\\Users\\himan\\phishing_detector\\BackEnd\\app.py', reloading
+2026-06-30 15:58:41,984 [INFO]  * Restarting with stat
+2026-06-30 15:58:49,255 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 15:58:49,318 [WARNING]  * Debugger is active!
+2026-06-30 15:58:49,321 [INFO]  * Debugger PIN: 521-104-728
+2026-06-30 15:58:50,754 [INFO] 127.0.0.1 - - [30/Jun/2026 15:58:50] "GET / HTTP/1.1" 200 -
+2026-06-30 15:59:34,022 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 15:59:34,098 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-30 15:59:34,100 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-30 15:59:34,109 [INFO]  * Restarting with stat
+2026-06-30 15:59:37,702 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 15:59:37,743 [WARNING]  * Debugger is active!
+2026-06-30 15:59:37,753 [INFO]  * Debugger PIN: 521-104-728
+2026-06-30 15:59:38,124 [INFO] 127.0.0.1 - - [30/Jun/2026 15:59:38] "GET / HTTP/1.1" 200 -
+2026-06-30 15:59:38,186 [INFO] 127.0.0.1 - - [30/Jun/2026 15:59:38] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 15:59:39,111 [INFO] 127.0.0.1 - - [30/Jun/2026 15:59:39] "GET / HTTP/1.1" 200 -
+2026-06-30 15:59:39,240 [INFO] 127.0.0.1 - - [30/Jun/2026 15:59:39] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 16:00:36,975 [INFO] [ROUTER] Attempt 1/1 -> Dispatched to OpenAI using model: gpt-4o-mini
+2026-06-30 16:00:40,376 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-30 16:00:40,383 [INFO] Retrying request to /chat/completions in 0.498258 seconds
+2026-06-30 16:00:41,107 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-30 16:00:41,118 [INFO] Retrying request to /chat/completions in 0.763110 seconds
+2026-06-30 16:00:42,083 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-30 16:00:42,090 [ERROR] [ROUTER] Attempt 1 encountered fault (OpenAI/gpt-4o-mini): RateLimitError -> Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-06-30 16:00:42,091 [ERROR] [ANALYZE FAULT] Routing pipeline execution error: All configured upstream API routes exhausted. Termination reason: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}. Moving execution parameters to local engine fallback.
+2026-06-30 16:00:42,093 [INFO] [FALLBACK ENGINE] Emergency clinical fallback rules resolved ESI=3, severity=MEDIUM
+2026-06-30 16:00:42,148 [INFO] [DB] Intake log synced successfully. Total record count: 81
+2026-06-30 16:00:42,149 [INFO] [ANALYZE DONE] Record 20260630160042-973 saved. ESI Assignment Tier Level: 3
+2026-06-30 16:00:42,150 [INFO] 127.0.0.1 - - [30/Jun/2026 16:00:42] "POST /analyze HTTP/1.1" 200 -
+2026-06-30 16:00:42,186 [INFO] 127.0.0.1 - - [30/Jun/2026 16:00:42] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 16:00:56,269 [INFO] [ROUTER] Attempt 1/1 -> Dispatched to OpenAI using model: gpt-4o-mini
+2026-06-30 16:00:56,506 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-30 16:00:56,512 [INFO] Retrying request to /chat/completions in 0.488740 seconds
+2026-06-30 16:00:57,066 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-30 16:00:57,066 [INFO] Retrying request to /chat/completions in 0.765129 seconds
+2026-06-30 16:00:57,906 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-30 16:00:57,910 [ERROR] [ROUTER] Attempt 1 encountered fault (OpenAI/gpt-4o-mini): RateLimitError -> Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-06-30 16:00:57,910 [ERROR] [CHAT FAULT] Conversational pipeline exception: All configured upstream API routes exhausted. Termination reason: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-06-30 16:00:57,911 [INFO] 127.0.0.1 - - [30/Jun/2026 16:00:57] "POST /chat HTTP/1.1" 200 -
+2026-06-30 16:10:43,633 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 16:10:49,274 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-30 16:10:49,342 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-30 16:10:49,604 [INFO]  * Restarting with stat
+2026-06-30 16:14:19,523 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 16:14:22,179 [WARNING]  * Debugger is active!
+2026-06-30 16:14:22,524 [INFO]  * Debugger PIN: 521-104-728
+2026-06-30 16:14:40,781 [INFO] 127.0.0.1 - - [30/Jun/2026 16:14:40] "GET / HTTP/1.1" 200 -
+2026-06-30 16:14:43,394 [INFO] 127.0.0.1 - - [30/Jun/2026 16:14:43] "GET / HTTP/1.1" 200 -
+2026-06-30 16:14:45,520 [INFO] 127.0.0.1 - - [30/Jun/2026 16:14:45] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 16:14:47,520 [INFO] 127.0.0.1 - - [30/Jun/2026 16:14:47] "GET / HTTP/1.1" 200 -
+2026-06-30 16:14:49,994 [INFO] 127.0.0.1 - - [30/Jun/2026 16:14:49] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 16:14:50,581 [INFO] 127.0.0.1 - - [30/Jun/2026 16:14:50] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 16:37:14,729 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 16:37:14,811 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-30 16:37:14,813 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-30 16:37:14,817 [INFO]  * Restarting with stat
+2026-06-30 16:37:19,069 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 16:37:19,102 [WARNING]  * Debugger is active!
+2026-06-30 16:37:19,109 [INFO]  * Debugger PIN: 521-104-728
+2026-06-30 16:37:19,292 [INFO] 127.0.0.1 - - [30/Jun/2026 16:37:19] "GET / HTTP/1.1" 200 -
+2026-06-30 16:37:20,349 [INFO] 127.0.0.1 - - [30/Jun/2026 16:37:20] "GET / HTTP/1.1" 200 -
+2026-06-30 16:39:35,062 [INFO] 127.0.0.1 - - [30/Jun/2026 16:39:35] "GET / HTTP/1.1" 200 -
+2026-06-30 16:39:36,378 [INFO] 127.0.0.1 - - [30/Jun/2026 16:39:36] "GET / HTTP/1.1" 200 -
+2026-06-30 16:41:58,544 [INFO] 127.0.0.1 - - [30/Jun/2026 16:41:58] "GET / HTTP/1.1" 200 -
+2026-06-30 16:42:03,077 [INFO] 127.0.0.1 - - [30/Jun/2026 16:42:03] "GET / HTTP/1.1" 200 -
+2026-06-30 17:25:14,263 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 17:25:14,499 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-30 17:25:14,504 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-30 17:25:14,510 [INFO]  * Restarting with stat
+2026-06-30 17:25:23,830 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 17:25:23,891 [WARNING]  * Debugger is active!
+2026-06-30 17:25:23,905 [INFO]  * Debugger PIN: 521-104-728
+2026-06-30 17:25:24,144 [INFO] 127.0.0.1 - - [30/Jun/2026 17:25:24] "GET / HTTP/1.1" 200 -
+2026-06-30 17:25:25,371 [INFO] 127.0.0.1 - - [30/Jun/2026 17:25:25] "GET / HTTP/1.1" 200 -
+2026-06-30 18:15:57,807 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 18:15:58,932 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-30 18:15:58,932 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-30 18:15:58,940 [INFO]  * Restarting with stat
+2026-06-30 18:16:09,659 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 18:16:09,783 [WARNING]  * Debugger is active!
+2026-06-30 18:16:09,794 [INFO]  * Debugger PIN: 521-104-728
+2026-06-30 18:16:10,196 [INFO] 127.0.0.1 - - [30/Jun/2026 18:16:10] "GET / HTTP/1.1" 200 -
+2026-06-30 18:16:11,259 [INFO] 127.0.0.1 - - [30/Jun/2026 18:16:11] "GET / HTTP/1.1" 200 -
+2026-06-30 18:16:11,406 [INFO] 127.0.0.1 - - [30/Jun/2026 18:16:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-30 18:16:12,209 [INFO] 127.0.0.1 - - [30/Jun/2026 18:16:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-30 18:18:25,320 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 18:18:25,464 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-30 18:18:25,469 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-30 18:18:25,478 [INFO]  * Restarting with stat
+2026-06-30 18:18:34,787 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 18:18:34,879 [WARNING]  * Debugger is active!
+2026-06-30 18:18:34,889 [INFO]  * Debugger PIN: 521-104-728
+2026-06-30 18:18:35,338 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:35] "GET / HTTP/1.1" 200 -
+2026-06-30 18:18:36,148 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:36] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:18:36,229 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:36] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:18:36,663 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:36] "GET / HTTP/1.1" 200 -
+2026-06-30 18:18:37,501 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:37] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:18:37,503 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:37] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:18:40,398 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:40] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:18:40,398 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:40] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:18:43,118 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:43] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:18:43,121 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:43] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:18:45,409 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:45] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:18:45,411 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:45] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:18:48,127 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:48] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:18:48,133 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:48] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:18:50,389 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:50] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:18:50,397 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:50] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:18:53,104 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:53] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:18:53,169 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:53] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:18:55,479 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:55] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:18:55,495 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:55] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:18:58,087 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:58] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:18:58,095 [INFO] 127.0.0.1 - - [30/Jun/2026 18:18:58] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:01,152 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:01] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:01,160 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:01] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:02,473 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:02] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:02,477 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:02] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:06,077 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:06] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:06,079 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:06] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:07,457 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:07] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:07,469 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:07] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:11,155 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:11] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:11,161 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:11] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:12,448 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:12] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:12,457 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:12] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:16,087 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:16] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:16,091 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:16] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:17,466 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:17] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:17,483 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:17] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:21,066 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:21] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:21,066 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:21] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:23,073 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:23] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:23,081 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:23] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:26,150 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:26] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:26,177 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:26] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:28,089 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:28] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:28,099 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:28] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:31,125 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:31] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:31,142 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:31] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:33,076 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:33] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:33,089 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:33] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:36,191 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:36] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:36,195 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:36] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:38,075 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:38] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:38,078 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:38] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:41,423 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:41] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:41,432 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:41] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:43,089 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:43] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:43,117 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:43] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:46,070 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:46] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:46,074 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:46] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:48,079 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:48] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:48,082 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:48] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:51,110 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:51] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:51,131 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:51] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:53,113 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:53] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:53,192 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:53] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:56,070 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:56] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:56,106 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:56] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:19:58,074 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:58] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:19:58,074 [INFO] 127.0.0.1 - - [30/Jun/2026 18:19:58] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:01,155 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:01] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:01,184 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:01] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:03,105 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:03] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:03,150 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:03] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:06,092 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:06] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:06,097 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:06] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:07,447 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:07] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:07,463 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:07] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:11,141 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:11] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:11,149 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:11] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:13,064 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:13] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:13,072 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:13] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:16,101 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:16] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:16,102 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:16] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:18,076 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:18] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:18,082 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:18] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:23,080 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:23] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:23,087 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:23] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:27,115 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:27,115 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:28,120 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:28] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:28,185 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:28] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:33,117 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:33] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:33,124 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:33] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:37,455 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:37] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:37,481 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:37] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:43,091 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:43] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:43,123 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:43] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:47,468 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:47] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:47,468 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:47] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:53,204 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:53] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:53,212 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:53] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:20:58,162 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:58] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:20:58,162 [INFO] 127.0.0.1 - - [30/Jun/2026 18:20:58] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:21:03,192 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:03] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:21:03,192 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:03] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:21:08,375 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:08] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:21:08,378 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:08] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:21:13,084 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:13] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:21:13,084 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:13] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:21:18,082 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:18] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:21:18,089 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:18] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:21:23,069 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:23] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:21:23,073 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:23] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:21:27,076 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:21:27,081 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:21:28,258 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:28] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:21:28,265 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:28] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:21:33,101 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:33] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:21:33,108 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:33] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:21:38,089 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:38] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:21:38,098 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:38] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:21:43,154 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:43] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:21:43,175 [INFO] 127.0.0.1 - - [30/Jun/2026 18:21:43] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:22:27,098 [INFO] 127.0.0.1 - - [30/Jun/2026 18:22:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:22:27,119 [INFO] 127.0.0.1 - - [30/Jun/2026 18:22:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:22:27,183 [INFO] 127.0.0.1 - - [30/Jun/2026 18:22:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:22:27,263 [INFO] 127.0.0.1 - - [30/Jun/2026 18:22:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:23:27,074 [INFO] 127.0.0.1 - - [30/Jun/2026 18:23:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:23:27,094 [INFO] 127.0.0.1 - - [30/Jun/2026 18:23:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:23:27,141 [INFO] 127.0.0.1 - - [30/Jun/2026 18:23:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:23:27,155 [INFO] 127.0.0.1 - - [30/Jun/2026 18:23:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:24:27,186 [INFO] 127.0.0.1 - - [30/Jun/2026 18:24:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:24:27,191 [INFO] 127.0.0.1 - - [30/Jun/2026 18:24:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:24:27,208 [INFO] 127.0.0.1 - - [30/Jun/2026 18:24:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:24:27,213 [INFO] 127.0.0.1 - - [30/Jun/2026 18:24:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:25:09,504 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:09] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:25:09,505 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:09] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:25:10,424 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:10] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:25:10,450 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:10] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:25:16,069 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:16] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:25:16,071 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:16] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:25:21,067 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:21] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:25:21,073 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:21] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:25:26,519 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:26] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:25:26,521 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:26] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:25:27,080 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:25:27,085 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:25:31,114 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:31] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:25:31,139 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:31] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:25:39,445 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:39] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:25:39,460 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:39] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:25:41,069 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:41] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:25:41,073 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:41] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:25:46,069 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:46] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:25:46,074 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:46] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:25:51,100 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:51] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:25:51,104 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:51] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:25:56,071 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:56] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:25:56,079 [INFO] 127.0.0.1 - - [30/Jun/2026 18:25:56] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:26:01,095 [INFO] 127.0.0.1 - - [30/Jun/2026 18:26:01] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:26:01,111 [INFO] 127.0.0.1 - - [30/Jun/2026 18:26:01] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:26:06,363 [INFO] 127.0.0.1 - - [30/Jun/2026 18:26:06] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:26:06,369 [INFO] 127.0.0.1 - - [30/Jun/2026 18:26:06] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:26:11,077 [INFO] 127.0.0.1 - - [30/Jun/2026 18:26:11] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:26:11,081 [INFO] 127.0.0.1 - - [30/Jun/2026 18:26:11] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:26:27,085 [INFO] 127.0.0.1 - - [30/Jun/2026 18:26:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:26:27,092 [INFO] 127.0.0.1 - - [30/Jun/2026 18:26:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:26:27,107 [INFO] 127.0.0.1 - - [30/Jun/2026 18:26:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:26:27,111 [INFO] 127.0.0.1 - - [30/Jun/2026 18:26:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:27:27,074 [INFO] 127.0.0.1 - - [30/Jun/2026 18:27:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:27:27,077 [INFO] 127.0.0.1 - - [30/Jun/2026 18:27:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:27:27,103 [INFO] 127.0.0.1 - - [30/Jun/2026 18:27:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:27:27,106 [INFO] 127.0.0.1 - - [30/Jun/2026 18:27:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:28:27,086 [INFO] 127.0.0.1 - - [30/Jun/2026 18:28:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:28:27,086 [INFO] 127.0.0.1 - - [30/Jun/2026 18:28:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:28:27,099 [INFO] 127.0.0.1 - - [30/Jun/2026 18:28:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:28:27,112 [INFO] 127.0.0.1 - - [30/Jun/2026 18:28:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:29:27,095 [INFO] 127.0.0.1 - - [30/Jun/2026 18:29:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:29:27,100 [INFO] 127.0.0.1 - - [30/Jun/2026 18:29:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:29:27,114 [INFO] 127.0.0.1 - - [30/Jun/2026 18:29:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:29:27,119 [INFO] 127.0.0.1 - - [30/Jun/2026 18:29:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:30:27,155 [INFO] 127.0.0.1 - - [30/Jun/2026 18:30:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:30:27,184 [INFO] 127.0.0.1 - - [30/Jun/2026 18:30:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:30:27,187 [INFO] 127.0.0.1 - - [30/Jun/2026 18:30:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:30:27,197 [INFO] 127.0.0.1 - - [30/Jun/2026 18:30:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:31:27,127 [INFO] 127.0.0.1 - - [30/Jun/2026 18:31:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:31:27,132 [INFO] 127.0.0.1 - - [30/Jun/2026 18:31:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:31:27,146 [INFO] 127.0.0.1 - - [30/Jun/2026 18:31:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:31:27,153 [INFO] 127.0.0.1 - - [30/Jun/2026 18:31:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:14,903 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:14] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:14,937 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:14] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:16,277 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:16] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:16,286 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:16] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:18,254 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:18] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:18,261 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:18] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:21,133 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:21] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:21,133 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:21] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:23,078 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:23] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:23,086 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:23] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:26,551 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:26] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:26,553 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:26] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:28,071 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:28] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:28,076 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:28] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:31,080 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:31] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:31,087 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:31] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:33,136 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:33] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:33,137 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:33] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:36,072 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:36] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:36,073 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:36] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:38,105 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:38] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:38,138 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:38] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:41,607 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:41] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:41,619 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:41] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:43,198 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:43] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:43,201 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:43] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:46,111 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:46] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:46,117 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:46] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:48,089 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:48] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:48,103 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:48] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:51,072 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:51] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:51,083 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:51] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:53,073 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:53] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:53,077 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:53] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:56,112 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:56] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:56,137 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:56] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:32:58,206 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:58] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:32:58,266 [INFO] 127.0.0.1 - - [30/Jun/2026 18:32:58] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:33:01,335 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:01] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:33:01,335 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:01] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:33:03,104 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:03] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:33:03,117 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:03] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:33:06,078 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:06] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:33:06,088 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:06] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:33:08,168 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:08] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:33:08,173 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:08] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:33:11,071 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:11] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:33:11,095 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:11] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:33:13,067 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:13] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:33:13,075 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:13] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:33:16,398 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:16] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:33:16,403 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:16] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:33:27,138 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:33:27,147 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:33:27,154 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:33:27,164 [INFO] 127.0.0.1 - - [30/Jun/2026 18:33:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:34:01,115 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:01] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:34:01,125 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:01] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:34:02,475 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:02] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:34:02,477 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:02] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:34:08,069 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:08] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:34:08,069 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:08] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:34:13,075 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:13] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:34:13,153 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:13] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:34:18,130 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:18] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:34:18,133 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:18] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:34:23,383 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:23] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:34:23,401 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:23] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:34:32,445 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 18:34:32,593 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-06-30 18:34:32,593 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-30 18:34:32,599 [INFO]  * Restarting with stat
+2026-06-30 18:34:43,249 [INFO] [ROUTER INIT] Active API upstream providers: {'groq': False, 'openai': True, 'openrouter': False}
+2026-06-30 18:34:43,326 [WARNING]  * Debugger is active!
+2026-06-30 18:34:43,336 [INFO]  * Debugger PIN: 521-104-728
+2026-06-30 18:34:43,685 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:43] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:34:43,685 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:43] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:34:43,752 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:43] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:34:43,752 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:43] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:34:43,786 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:43] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:34:43,846 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:43] "GET / HTTP/1.1" 200 -
+2026-06-30 18:34:43,855 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:43] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:34:44,993 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:44] "GET / HTTP/1.1" 200 -
+2026-06-30 18:34:48,165 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:48] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:34:48,175 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:48] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:34:53,069 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:53] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:34:53,077 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:53] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:34:58,093 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:58] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:34:58,121 [INFO] 127.0.0.1 - - [30/Jun/2026 18:34:58] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:35:03,067 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:03] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:35:03,070 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:03] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:35:13,828 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:13] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:35:13,837 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:13] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:35:18,267 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:18] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:35:18,327 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:18] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:35:23,083 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:23] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:35:23,145 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:23] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:35:27,282 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:35:27,315 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:35:28,075 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:28] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:35:28,084 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:28] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:35:33,062 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:33] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:35:33,062 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:33] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:35:38,108 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:38] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:35:38,834 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:38] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:35:43,067 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:43] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:35:43,095 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:43] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:35:48,073 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:48] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:35:48,106 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:48] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:35:53,150 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:53] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:35:53,159 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:53] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:35:58,063 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:58] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:35:58,068 [INFO] 127.0.0.1 - - [30/Jun/2026 18:35:58] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:36:03,199 [INFO] 127.0.0.1 - - [30/Jun/2026 18:36:03] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:36:03,201 [INFO] 127.0.0.1 - - [30/Jun/2026 18:36:03] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:36:08,396 [INFO] 127.0.0.1 - - [30/Jun/2026 18:36:08] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:36:08,408 [INFO] 127.0.0.1 - - [30/Jun/2026 18:36:08] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:36:13,070 [INFO] 127.0.0.1 - - [30/Jun/2026 18:36:13] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:36:13,078 [INFO] 127.0.0.1 - - [30/Jun/2026 18:36:13] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:36:27,076 [INFO] 127.0.0.1 - - [30/Jun/2026 18:36:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:36:27,239 [INFO] 127.0.0.1 - - [30/Jun/2026 18:36:27] "GET /analytics HTTP/1.1" 200 -
+2026-06-30 18:36:27,311 [INFO] 127.0.0.1 - - [30/Jun/2026 18:36:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:36:27,321 [INFO] 127.0.0.1 - - [30/Jun/2026 18:36:27] "GET /health HTTP/1.1" 200 -
+2026-06-30 18:37:07,238 [INFO]  * Detected change in 'C:\\Users\\himan\\phishing_detector\\BackEnd\\app.py', reloading
+2026-06-30 18:37:07,722 [INFO]  * Restarting with stat
