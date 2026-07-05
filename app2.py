@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, render_template_string
 from groq import Groq
-from dotvenv import load_dotenv
+from dotenv import load_dotenv
 import os
 import json
 import re
@@ -42,15 +42,12 @@ def after_request(response):
     return response
 
 
-# Initialize AI clients safely
+# Initialize Native Groq Client safely
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+groq_client = Groq(api_key=GROQ_API_KEY) if GROQ_API_KEY else None
 
-groq_client = OpenAI(base_url="https://api.groq.com/openai/v1", api_key=GROQ_API_KEY) if GROQ_API_KEY else None
-openai_client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
-
-if not groq_client and not openai_client:
-    print("[WARN] No AI provider credentials found. Engaging Vital-Linked Local Fallback Engine.")
+if not groq_client:
+    print("[WARN] No Groq credentials found. Engaging Vital-Linked Local Fallback Engine.")
 
 LOCAL_MED_TRANSLATIONS = {
     "es": {
@@ -134,32 +131,16 @@ def infer_symptom_terms(user_text):
     return [tokens[0]] if tokens else ["reported symptoms"]
 
 
-def select_client_for_model(model_name):
-    if not model_name:
-        return groq_client or openai_client
-    if str(model_name).startswith("groq/"):
-        return groq_client
-    if str(model_name).startswith("gpt-"):
-        return openai_client
-    return groq_client or openai_client
-
-
 def run_model_completion(model_name, prompt_content, temperature=0.3, max_tokens=300):
-    # Force the app to use Groq's API key from your Render Environment
-    api_key = os.getenv("GROQ_API_KEY")
-    if not api_key:
-        raise ValueError("GROQ_API_KEY is missing from the environment configuration!")
+    if not groq_client:
+        raise ValueError("Groq client is uninitialized. Verify your GROQ_API_KEY.")
         
-    # Initialize the Groq client
-    client = Groq(api_key=api_key)
-    
-    # Strip away frontend routing prefixes if they exist
+    # Strip frontend routing prefixes if they exist
     clean_model = model_name
     if "groq/" in model_name:
-        clean_model = model_name.split("/")[-1] # Converts "groq/llama-3.3-70b-versatile" -> "llama-3.3-70b-versatile"
+        clean_model = model_name.split("/")[-1]
 
-    # Make the native Groq completion request
-    completion = client.chat.completions.create(
+    completion = groq_client.chat.completions.create(
         model=clean_model,
         messages=[{"role": "user", "content": prompt_content}],
         temperature=temperature,
@@ -327,7 +308,7 @@ def build_local_chat_reply(message, language):
         replies = {
             "Spanish": ["Hay comodidades disponibles en la sala de espera, y el personal puede orientarle si necesita ayuda específica.", "Podemos revisar las comodidades y servicios disponibles para su comodidad."],
             "Hindi": ["प्रतीक्षा कक्ष में सुविधाएँ उपलब्ध हैं, और स्टाफ आपकी सहायता कर सकता है।", "मैं आपकी सुविधाओं और उपलब्ध सेवाओं के बारे में जानकारी दे सकता हूँ।"],
-            "French": ["Des commodités sont disponibles dans la salle d'attente, et le personnel peut vous guider.", "Je peux vous orienter vers les services et commodités disponibles."],
+            "French": ["Des commodités sont disponibles dans la salle d'attente, et le personnel puede vous guider.", "Je peux vous orienter vers les services et commodités disponibles."],
             "Mandarin": ["候诊室内有可用设施，工作人员也可以为您提供具体帮助。", "我可以为您说明当前可用的服务与设施。"],
         }
         return random.choice(replies.get(language, ["I can help with the waiting-room amenities and available services.", "I can point you to the facilities and support available right now."]))
@@ -345,7 +326,7 @@ def build_local_chat_reply(message, language):
         "Spanish": ["Gracias por su mensaje. Puedo ayudar con información general de la sala de espera y los próximos pasos.", "Estoy aquí para ayudar con preguntas sencillas sobre la espera, los servicios y el proceso de atención."],
         "Hindi": ["धन्यवाद। मैं प्रतीक्षा कक्ष, सेवाओं और प्रक्रिया के बारे में सामान्य सहायता दे सकता हूँ।", "मैं आपकी प्रतीक्षा, सेवाओं और आगे की प्रक्रियाओं के बारे में मदद कर सकता हूँ।"],
         "French": ["Merci pour votre message. Je peux aider avec les informations générales sur l'attente et les prochaines étapes.", "Je suis là pour répondre aux questions simples sur l'attente, les services et le parcours de soins."],
-        "Mandarin": ["感谢您的留言。我可以协助您了解候诊室流程、服务信息和接下来需要做什么。", "我可以为您提供关于等待、服务和后续流程的常规帮助。"],
+        "Mandarin": ["感谢您的留言。我可以协助您了解候诊室流程、服务信息和接下来需要做什么。", "我可以为您说明当前等待情况以及可用设施。"],
     }
     return random.choice(replies.get(language, ["Thank you for your message. I can help with general waiting-room questions and next steps.", "I am here to help with general questions about the waiting process and available services."]))
 
@@ -549,7 +530,8 @@ def analyze():
     medications = data.get("medications", "")
 
     selected_model = (data.get("model") or "groq/llama-3.3-70b-versatile").strip()
-    if not (groq_client or openai_client):
+    
+    if not groq_client:
         parsed = local_fallback_engine(user_text, vitals, allergies, medications)
     else:
         prompt = build_prompt(user_text, language, vitals, allergies, medications)
@@ -557,11 +539,11 @@ def analyze():
             resp = run_model_completion(
                 selected_model,
                 prompt,
-                temperature=0.0,
-                response_format={"type": "json_object"}
+                temperature=0.0
             )
             parsed = json.loads(resp.choices[0].message.content)
-        except Exception:
+        except Exception as err:
+            print(f"[CRITICAL ANALYSIS ERROR]: {err}")
             parsed = local_fallback_engine(user_text, vitals, allergies, medications)
 
     db_record = {
@@ -584,7 +566,7 @@ def chat():
     language = data.get("language", "English")
 
     selected_model = (data.get("model") or "groq/llama-3.3-70b-versatile").strip()
-    if not (groq_client or openai_client):
+    if not groq_client:
         return jsonify({"reply": build_local_chat_reply(msg, language)})
 
     chat_prompt = f"""
@@ -610,27 +592,27 @@ def chat():
         )
         reply = resp.choices[0].message.content.strip()
         return jsonify({"reply": reply})
-    except Exception:
+    except Exception as err:
+        print(f"[CRITICAL CHAT ERROR]: {err}")
         return jsonify({"reply": build_local_chat_reply(msg, language)})
+
 
 @app.route('/debug-api-test', methods=['GET'])
 def debug_api_test():
-    openai_key_exists = bool(os.getenv("OPENAI_API_KEY"))
     groq_key_exists = bool(os.getenv("GROQ_API_KEY"))
     
     diagnostic_info = {
-        "openai_key_present_in_environment": openai_key_exists,
         "groq_key_present_in_environment": groq_key_exists,
-        "error_logs": "None"
+        "api_test_connection": "PENDING"
     }
     
-    # Try running a test completion
     try:
-        from openai import OpenAI
-        # Using whatever client setup your app uses internally
-        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        if not groq_key_exists:
+            raise ValueError("GROQ_API_KEY is completely missing from the Render environment variables.")
+            
+        client = Groq(api_key=os.getenv("GROQ_API_KEY"))
         test_resp = client.chat.completions.create(
-            model="gpt-3.5-turbo", # Change to your selected_model name if using Groq
+            model="llama-3.3-70b-versatile",
             messages=[{"role": "user", "content": "Ping"}],
             max_tokens=5
         )
@@ -641,5 +623,7 @@ def debug_api_test():
         diagnostic_info["error_logs"] = str(e)
         
     return jsonify(diagnostic_info)
+
+
 if __name__ == "__main__":
     app.run(debug=False, host="0.0.0.0", port=int(os.getenv("PORT", "5000")))
