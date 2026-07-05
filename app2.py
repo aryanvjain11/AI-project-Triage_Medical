@@ -601,9 +601,15 @@ def chat():
 def debug_api_test():
     groq_key_exists = bool(os.getenv("GROQ_API_KEY"))
     
+    # Capture all environment variable names to check for typos/casing
+    visible_env_keys = list(os.environ.keys())
+    
     diagnostic_info = {
         "groq_key_present_in_environment": groq_key_exists,
-        "api_test_connection": "PENDING"
+        "api_test_connection": "PENDING",
+        "all_visible_environment_keys": visible_env_keys,
+        "current_working_directory": str(Path.cwd()),
+        "env_file_exists": os.path.exists(".env")
     }
     
     try:
@@ -623,7 +629,6 @@ def debug_api_test():
         diagnostic_info["error_logs"] = str(e)
         
     return jsonify(diagnostic_info)
-
 
 if __name__ == "__main__":
     app.run(debug=False, host="0.0.0.0", port=int(os.getenv("PORT", "5000")))
